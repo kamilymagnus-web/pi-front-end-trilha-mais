@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matriculas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Matriculas</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="cursos.html">Cursos</a>
+            <a href="perfil.html">Perfil</a>
+            <input type="text" placeholder="Procurar..">
+        </nav>
+    </header>
+
+<main>
+    <h2>Formulário de Matrícula</h2>
+    <form action="processar_matricula.php" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" required>
+        
+        <label for="curso">Curso:</label>
+        <select id="cursos tecnicos" name="curso" required>
+
+            <option value="">Cursos Técnicos</option>
+            <option value="curso1">Curso 1</option>
+            <option value="curso2">Curso 2</option>
+            <option value="curso3">Curso 3</option>
+            <option value="curso4">Curso 4</option>
+        </select>
+
+        <select id="cursos Livres" name="curso" required>
+            <option value="">Cursos Livres</option>
+            <option value="curso1">Curso 1</option>
+            <option value="curso2">Curso 2</option>
+            <option value="curso3">Curso 3</option>
+            <option value="curso4">Curso 4</option>
+        </select>
+
+        <select id="cursos Graduação" name="curso" required>
+            <option value="">Cursos de Graduação</option>
+            <option value="curso1">Curso 1</option>
+            <option value="curso2">Curso 2</option>
+            <option value="curso3">Curso 3</option>
+            <option value="curso4">Curso 4</option>
+    
+
+        <button type="submit">Enviar Matrícula</button>
+    </form>
+</main>
+</body>
+</html>
