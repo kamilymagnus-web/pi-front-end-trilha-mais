@@ -65,3 +65,14 @@ img {
     width: 100%;
     height: auto;
 }
+
+p {
+    margin: 20px 0;
+    line-height: 1.6;
+    text-align: center;
+}
+
+hr {
+    background: #9d0505;
+    height: 2px;
+}
