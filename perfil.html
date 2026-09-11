@@ -4,7 +4,6 @@
         <title>NOME FANTASIA</title>
         <link rel="stylesheet" href="style.css">
         <script src="script.js" defer></script>
-        </nav>
     </head>
     <body>
         <header>
@@ -20,38 +19,38 @@
             <h2>PERFIL</h2>
             <p>Acesse suas informações:</p>
 
-            <div class="Meus Cursos">
-                <select id="categoria" name="categoria">
+            <div class="Meus-Cursos">
+                <select id="categoria-cursos" name="categoria">
                     <option value="default">Selecione a categoria</option>
-                    <option value="cursos disponiveis">Cursos Disponíveis</option>
-                    <option value="cursos em andamento">Cursos em Andamento</option>
-                    <option value="cursos concluidos">Cursos Concluídos</option>
-                    <option value="cursos favoritos">Cursos Favoritos</option>
+                    <option value="disponiveis">Cursos Disponíveis</option>
+                    <option value="andamento">Cursos em Andamento</option>
+                    <option value="concluidos">Cursos Concluídos</option>
+                    <option value="favoritos">Cursos Favoritos</option>
                 </select>
-                <button type="button" id="filtrar">Filtrar</button>
+                <button type="button" id="filtrar-cursos">Filtrar</button>
                 
-                <div class="cursos disponiveis">
+                <div class="painel-cursos" id="disponiveis">
                     <h3>Cursos Disponíveis</h3>
                     <p>Lista de cursos disponíveis para inscrição.</p>
                 </div>
 
-                <div class="cursos em andamento">
+                <div class="painel-cursos" id="andamento">
                     <h3>Cursos em Andamento</h3>
                     <p>Lista de cursos que você está atualmente matriculado.</p>
                 </div>
 
-                <div class="cursos concluidos">
+                <div class="painel-cursos" id="concluidos">
                     <h3>Cursos Concluídos</h3>
                     <p>Lista de cursos que você concluiu com sucesso.</p>
                 </div>
 
-                <div class="cursos favoritos">
+                <div class="painel-cursos" id="favoritos">
                     <h3>Cursos Favoritos</h3>
                     <p>Lista de cursos que você marcou como favoritos.</p>
                 </div>
             </div>
 
-            <div class="informacoes pessoais">
+            <div class="informacoes-pessoais">
                 <h3>Informações Pessoais</h3>
                 <p>email: john.doe@example.com</p>
                 <p>telefone: (11) 1234-5678</p>
@@ -59,14 +58,14 @@
             </div>
 
             <div class="documentos">
-                <select id="categoria" name="categoria">
+                <select id="categoria-documentos" name="categoria">
                     <option value="default">Selecione a categoria</option>
-                    <option value="documentos pessoais">Documentos Pessoais</option>
-                    <option value="documentos acadêmicos">Certificados Acadêmicos</option>
+                    <option value="pessoais">Documentos Pessoais</option>
+                    <option value="academicos">Certificados Acadêmicos</option>
                 </select>
-                <button type="button" id="filtrar">Filtrar</button>
+                <button type="button" id="filtrar-documentos">Filtrar</button>
 
-                <div class="documentos pessoais">
+                <div class="painel-documentos" id="pessoais">
                     <h3>Documentos Pessoais</h3>
                     <p>Faça o upload de documentos necessários:</p>
                     <form action="upload_documentos.php" method="post" enctype="multipart/form-data">
@@ -76,7 +75,7 @@
                     </form>
                 </div>
 
-                <div class="documentos acadêmicos">
+                <div class="painel-documentos" id="academicos">
                     <h3>Certificados Acadêmicos</h3>
                     <p>Faça o upload de seus certificados:</p>
                     <form action="upload_documentos.php" method="post" enctype="multipart/form-data">

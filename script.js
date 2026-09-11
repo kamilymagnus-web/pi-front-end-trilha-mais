@@ -1,19 +1,41 @@
-const categoria = document.getElementById('categoria');
-const painéis = document.querySelectorAll('.painel');
-const filtrar = document.getElementById('filtrar');
+const categoriaCursos = document.getElementById('categoria-cursos');
+const paineisCursos = document.querySelectorAll('.painel-cursos');
+const filtrarCursos = document.getElementById('filtrar-cursos');
 
-filtrar.addEventListener('click', () => {
-    const categoriaSelecionada = categoria.value;
-    paineis.forEach(painel => {
+filtrarCursos.addEventListener('click', () => {
+    const categoriaSelecionada = categoriaCursos.value;
+
+    paineisCursos.forEach(painel => {
         painel.style.display = "none";  
+    });
+
+    if (categoriaSelecionada === "default") {
+        return;
+    }
+
+    const painelSelecionado = document.getElementById(categoriaSelecionada);
+    if (painelSelecionado) {
+        painelSelecionado.style.display = "block"; 
+    }
 });
 
-if (categoriaSelecionada === "default") {
-    return;
-}
+const categoriaDocumentos = document.getElementById('categoria-documentos');
+const paineisDocumentos = document.querySelectorAll('.painel-documentos');
+const filtrarDocumentos = document.getElementById('filtrar-documentos');
 
-const painelSelecionado = document.getElementById(categoriaSelecionada);
-if (painelSelecionado) {
-    painelSelecionado.style.display = "block";
-}
+filtrarDocumentos.addEventListener('click', () => {
+    const categoriaSelecionada = categoriaDocumentos.value;
+
+    paineisDocumentos.forEach(painel => {
+        painel.style.display = "none";  
+    });
+
+    if (categoriaSelecionada === "default") {
+        return;
+    }
+
+    const painelSelecionado = document.getElementById(categoriaSelecionada);
+    if (painelSelecionado) {
+        painelSelecionado.style.display = "block"; 
+    }
 });
