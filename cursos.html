@@ -11,9 +11,7 @@
             <h1>NOME FANTASIA</h1>
             <nav>
                 <a href="index.html">Home</a>
-                <a href="sobre.html">Sobre</a>
                 <a href="cursos.html">Cursos</a>
-                <a href="contato.html">Fale conosco</a>
                 <a href="perfil.html">Perfil</a>
                 <input type="text" placeholder="Procurar..">
             </nav>
@@ -26,24 +24,39 @@
                 <option value="cursos técnicos">Cursos Técnicos</option>
                 <option value="Graduação">Graduação</option>
                 <option value="cursos Livres">Cursos Livres</option>
-                <button type="button" id="filtrar">Filtrar</button>
             </select>
+            <button type="button" id="filtrar">Filtrar</button>
 
-            <div class="cursos Técnicos">
+            <div class id="Técnicos">
                 <h3>Cursos Técnicos</h3>
                 <p>Lista de cursos técnicos disponíveis.</p>
+                <select id="subcategoria" name="subcategoria">
+                    <option value="default">Selecione a subcategoria</option>
+                    <option value="informática">Informática</option>
+                    <option value="saúde">Saúde</option>
+                    <option value="administração">Administração</option>
+                </select>
             </div>
-
-            <div class="cursos Graduação">
+            <div class id="Graduação">
                 <h3> Graduação</h3>
                 <p>Lista de cursos de graduação disponíveis.</p>
+                <select id="subcategoria" name="subcategoria">
+                    <option value="default">Selecione a subcategoria</option>
+                    <option value="engenharia">Engenharia</option>
+                    <option value="direito">Direito</option>
+                    <option value="medicina">Medicina</option>
+                </select>
             </div>
-            
-            <div class="cursos Livres">
+            <div class id="Cursos Livres">
                 <h3>Cursos Livres</h3>
                 <p>Lista de cursos livres disponíveis.</p>
+                <select id="subcategoria" name="subcategoria">
+                    <option value="default">Selecione a subcategoria</option>
+                    <option value="artes">Artes</option>
+                    <option value="idiomas">Idiomas</option>
+                    <option value="negócios">Negócios</option>
+                </select>
             </div>
-
         </main>
     </body>
 </html>

@@ -11,9 +11,7 @@
             <h1>NOME FANTASIA</h1>
             <nav>
                 <a href="index.html">Home</a>
-                <a href="sobre.html">Sobre</a>
                 <a href="cursos.html">Cursos</a>
-                <a href="contato.html">Fale conosco</a>
                 <a href="perfil.html">Perfil</a>
                 <input type="text" placeholder="Procurar..">
             </nav>
@@ -22,34 +20,72 @@
             <h2>PERFIL</h2>
             <p>Acesse suas informações:</p>
 
-            <select id="categoria" name="categoria">
-                <option value="default">Selecione a categoria</option>
-                <option value="cursos disponiveis">Cursos Disponíveis</option>
-                <option value="cursos em andamento">Cursos em Andamento</option>
-                <option value="cursos concluidos">Cursos Concluídos</option>
-                <option value="cursos favoritos">Cursos Favoritos</option>
-            </select>
+            <div class="Meus Cursos">
+                <select id="categoria" name="categoria">
+                    <option value="default">Selecione a categoria</option>
+                    <option value="cursos disponiveis">Cursos Disponíveis</option>
+                    <option value="cursos em andamento">Cursos em Andamento</option>
+                    <option value="cursos concluidos">Cursos Concluídos</option>
+                    <option value="cursos favoritos">Cursos Favoritos</option>
+                </select>
+                <button type="button" id="filtrar">Filtrar</button>
+                
+                <div class="cursos disponiveis">
+                    <h3>Cursos Disponíveis</h3>
+                    <p>Lista de cursos disponíveis para inscrição.</p>
+                </div>
 
-            <div class="cursos disponiveis">
-                <h3>Cursos Disponíveis</h3>
-                <p>Lista de cursos disponíveis para inscrição.</p>
+                <div class="cursos em andamento">
+                    <h3>Cursos em Andamento</h3>
+                    <p>Lista de cursos que você está atualmente matriculado.</p>
+                </div>
+
+                <div class="cursos concluidos">
+                    <h3>Cursos Concluídos</h3>
+                    <p>Lista de cursos que você concluiu com sucesso.</p>
+                </div>
+
+                <div class="cursos favoritos">
+                    <h3>Cursos Favoritos</h3>
+                    <p>Lista de cursos que você marcou como favoritos.</p>
+                </div>
             </div>
 
-            <div class="cursos em andamento">
-                <h3>Cursos em Andamento</h3>
-                <p>Lista de cursos que você está atualmente matriculado.</p>
+            <div class="informacoes pessoais">
+                <h3>Informações Pessoais</h3>
+                <p>email: john.doe@example.com</p>
+                <p>telefone: (11) 1234-5678</p>
+                <p>endereço: Rua Exemplo, 123, Cidade, Estado</p>
             </div>
 
-            <div class="cursos concluidos">
-                <h3>Cursos Concluídos</h3>
-                <p>Lista de cursos que você concluiu com sucesso.</p>
-            </div>
+            <div class="documentos">
+                <select id="categoria" name="categoria">
+                    <option value="default">Selecione a categoria</option>
+                    <option value="documentos pessoais">Documentos Pessoais</option>
+                    <option value="documentos acadêmicos">Certificados Acadêmicos</option>
+                </select>
+                <button type="button" id="filtrar">Filtrar</button>
 
-            <div class="cursos favoritos">
-                <h3>Cursos Favoritos</h3>
-                <p>Lista de cursos que você marcou como favoritos.</p>
+                <div class="documentos pessoais">
+                    <h3>Documentos Pessoais</h3>
+                    <p>Faça o upload de documentos necessários:</p>
+                    <form action="upload_documentos.php" method="post" enctype="multipart/form-data">
+                        <label for="documento">Selecione o documento:</label>
+                        <input type="file" id="documento" name="documento" required>
+                        <button type="submit">Enviar Documento</button>
+                    </form>
+                </div>
+
+                <div class="documentos acadêmicos">
+                    <h3>Certificados Acadêmicos</h3>
+                    <p>Faça o upload de seus certificados:</p>
+                    <form action="upload_documentos.php" method="post" enctype="multipart/form-data">
+                        <label for="certificado">Selecione o certificado:</label>
+                        <input type="file" id="certificado" name="certificado" required>
+                        <button type="submit">Enviar Certificado</button>
+                    </form>
+                </div>
             </div>
-            
         </main>
     </body>
 </html>
