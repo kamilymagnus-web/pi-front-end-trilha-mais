@@ -3,10 +3,12 @@ body{
     margin: 0;
     padding: 0;
 }
+
 h1{
     text-align: center;
     margin-top: 20px;
 }
+
 
 header {
     background-color: #9d0505;
@@ -29,17 +31,82 @@ a {
     padding: 5px 10px;
 }
 
+a:hover {
+    background-color: #7a0404;
+    border-radius: 50px;
+}
+
 nav input[type="text"] {
     padding: 5px;
     border-radius: 5px;
     border: none;
+    text-align: center;
 }
 
-div.container {
+.container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-around;
+    padding: 10px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 50px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.card button {
+    display: flex;
+    justify-content: center;
+    align-items: row;
+    text-align: center;
+    background-color: #9d0505;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.botaoCursos{
+    display: flex;
+    justify-content: center;
+    align-items: row;
+    border: none;
+    padding: 10px;
+    margin: 1px;
+    border-radius: 5px;
+}
+
+.botao button{
+    display: flex;
+    justify-content: center;
+    align-items: row;
+    text-align: center;
+    background-color: #9d0505;
+    color: #fff;
+    border: none;
+    width: 100px;
+    height: 50px;
     padding: 20px;
+    margin: 20px;
+    border-radius: 80px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #7a0404;
 }
 
 footer {
@@ -52,23 +119,19 @@ footer {
     width: 100%;
 }
 
-div.banner {
+.banner {
     display: flex;
     flex-direction: column;
-    align-items: center;
     position: relative;
+    align-items: center;
     text-align: center;
     color: white;
 }
 
-img {
+.banner img{
     width: 100%;
     height: auto;
 }
-
-
-
-
 
 p {
     margin: 20px 0;
