@@ -6,45 +6,50 @@
         <script src="script.js" defer></script>
     </head>
     <body>
-        <header>
-            <h1>NOME FANTASIA</h1>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="cursos.html">Cursos</a>
-                <a href="perfil.html">Perfil</a>
-                <input type="text" placeholder="Procurar..">
-            </nav>
+       <header>
+            <div class="navBar">
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="cursos.html">Cursos</a>
+                    <a href="perfil.html">Meu Perfil</a>
+                    <a href="#sobre">Sobre</a>
+                    <a href="#contato">Fale conosco</a>
+                    <input type="text" placeholder="Procurar..">
+                </nav>
+            </div>
         </header>
         <main>
-            <h2>PERFIL</h2>
-            <p>Acesse suas informações:</p>
+            <div class="banner">
+                <h1>Meu Perfil</h1>
+                <p>Acesse suas informações:</p>
+            </div>
 
             <div class="Meus-Cursos">
-                <select id="categoria-cursos" name="categoria">
+                <select id="categoriaPerfil" name="categoria">
                     <option value="default">Selecione a categoria</option>
                     <option value="disponiveis">Cursos Disponíveis</option>
                     <option value="andamento">Cursos em Andamento</option>
                     <option value="concluidos">Cursos Concluídos</option>
                     <option value="favoritos">Cursos Favoritos</option>
                 </select>
-                <button type="button" id="filtrar-cursos">Filtrar</button>
+                <button type="button" id="filtrarPerfil">Filtrar</button>
                 
-                <div class="painel-cursos" id="disponiveis">
+                <div class="painelPerfil" id="disponiveis">
                     <h3>Cursos Disponíveis</h3>
                     <p>Lista de cursos disponíveis para inscrição.</p>
                 </div>
 
-                <div class="painel-cursos" id="andamento">
+                <div class="painelPerfil" id="andamento">
                     <h3>Cursos em Andamento</h3>
                     <p>Lista de cursos que você está atualmente matriculado.</p>
                 </div>
 
-                <div class="painel-cursos" id="concluidos">
+                <div class="painelPerfil" id="concluidos">
                     <h3>Cursos Concluídos</h3>
                     <p>Lista de cursos que você concluiu com sucesso.</p>
                 </div>
 
-                <div class="painel-cursos" id="favoritos">
+                <div class="painelPerfil" id="favoritos">
                     <h3>Cursos Favoritos</h3>
                     <p>Lista de cursos que você marcou como favoritos.</p>
                 </div>
@@ -86,5 +91,18 @@
                 </div>
             </div>
         </main>
+
+            <section id="sobre">
+        <h1>Sobre</h1>
+        <p>Os sites de cursos online revolucionaram a educação digital ao democratizar o acesso ao conhecimento e permitir o aprendizado flexível em qualquer lugar. Seja para quem deseja criar e hospedar a sua própria página educacional ou para quem busca plataformas para estudar de graça ou investir na carreira, o ecossistema digital oferece opções consolidadas.</p>
+    </section>
+
+    <footer id="contato">
+        <p>&copy; 2024 NOME FANTASIA. Todos os direitos reservados.</p>
+        <p>Contato: contato@nomefantasia.com</p>
+        <p>Telefone: (18) 1234-5678</p>
+        <p>Av. João Arruda Brasil, 500</p>
+        <p>São Joaquim, Araçatuba - SP, 16050-400</p>
+    </footer>
     </body>
 </html>
