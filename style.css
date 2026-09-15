@@ -342,3 +342,48 @@ hr {
     background: #9d0505;
     height: 2px;
 }
+
+/* css edição kami */
+
+.painelPerfil {
+    display:none
+}
+
+.painelDocumentos {
+    display:none
+}
+
+.painelCursos {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding:20px;
+    margin-top: 20px;
+    background-color: #e1a1a19e;  
+    transition: all 0.3s ease-in-out;
+}
+
+.painelCursos h3 {
+    font-size: 25px;
+    margin-top: 0;
+    color:rgb(188, 5, 39)
+}
+
+.painelCursos.selecionado {
+    border-color:#34b843;
+    box-shadow: 0 0 0 5px rgba(13, 237, 46, 0.25);
+}
+
+.painelCursos section div {
+    background-color:#dfdddf97;
+    padding: 12px;
+    border-radius: 20px;
+    font-size: 20px;
+    color:#b83434;
+}
+
+.painelDocumentos.selecionado {
+    border-color:#34b843;
+    box-shadow: 0 0 0 5px rgba(13, 237, 46, 0.25);
+}
+
+
