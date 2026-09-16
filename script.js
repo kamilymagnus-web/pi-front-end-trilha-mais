@@ -71,12 +71,16 @@ if (filtrarCursos) {
     });
 }
 
-const formularioMatricula = document.getElementById('formularioMatricula');
+const formularioMatricula = document.getElementById('formularioMatricula').value.trim();
 const mensagemSucesso = document.getElementById('mensagemSucesso');
 const mensagemErro = document.getElementById('mensagemErro');
 
 formularioMatricula.addEventListener('submit', function(event) {
     event.preventDefault();
+
+    /*const nome = document.getElementById('nome').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const telefone = document.getElementById('telefone').value.trim();*/
 
     const selects = [
         document.getElementById('cursosTecnicos'),
