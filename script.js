@@ -71,5 +71,12 @@ if (filtrarCursos) {
     });
 }
 
+const formularioMatricula = document.getElementById('formularioMatricula');
+const mensagemSucesso = document.getElementById('mensagemSucesso');
 
+formularioMatricula.addEventListener('submit', function(event) {
+    event.preventDefault();
 
+    mensagemSucesso.style.display = 'block';
+
+});
