@@ -349,10 +349,6 @@ hr {
     display:none
 }
 
-.painelDocumentos {
-    display:none
-}
-
 .painelCursos {
     border: 2px solid black;
     border-radius: 10px;
@@ -381,9 +377,7 @@ hr {
     color:#b83434;
 }
 
-.painelDocumentos.selecionado {
-    border-color:#34b843;
-    box-shadow: 0 0 0 5px rgba(13, 237, 46, 0.25);
+
+.painel-documentos.selecionado {
+
 }
-
-
