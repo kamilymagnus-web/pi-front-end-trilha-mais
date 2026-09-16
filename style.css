@@ -350,12 +350,18 @@ hr {
 }
 
 .painelCursos {
+    display:block;
+    transition: all 0.3s ease-in-out;
     border: 2px solid black;
     border-radius: 10px;
     padding:20px;
     margin-top: 20px;
     background-color: #e1a1a19e;  
-    transition: all 0.3s ease-in-out;
+}
+
+.painelCursos.ativo {
+    opacity: 1;
+    border: 2px solid #444
 }
 
 .painelCursos h3 {
@@ -376,5 +382,3 @@ hr {
     font-size: 20px;
     color:#b83434;
 }
-
-

@@ -71,17 +71,5 @@ if (filtrarCursos) {
     });
 }
 
-const formularioMatricula = document.getElementById('formularioMatricula');
-const mensagemSucesso = document.getElementById('mensagemSucesso');
 
-if (formularioMatricula) {
-    formularioMatricula.addEventListener('submit', function(event) {
-        event.preventDefault();
 
-        // Aqui você pode adicionar a lógica para processar a matrícula
-        // Por exemplo, enviar os dados para o servidor
-
-        // Exibir mensagem de sucesso
-        mensagemSucesso.style.display = "block";
-    });
-}
