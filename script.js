@@ -49,7 +49,6 @@ if (filtrarDocumentos) {
 const categoriaCursos = document.getElementById('categoriaCursos');
 const paineisCursos = document.querySelectorAll('.painelCursos');
 const filtrarCursos = document.getElementById('filtrarCursos');
-
 if (filtrarCursos) {
     filtrarCursos.addEventListener('click', () => {
         const categoriaSelecionada = categoriaCursos.value;
@@ -62,6 +61,7 @@ if (filtrarCursos) {
             return;
         }
 
+
         const painelSelecionado = document.getElementById(categoriaSelecionada);
         if (painelSelecionado) {
             painelSelecionado.classList.add('selecionado');
@@ -71,5 +71,28 @@ if (filtrarCursos) {
     });
 }
 
+const formularioMatricula = document.getElementById('formularioMatricula');
+const mensagemSucesso = document.getElementById('mensagemSucesso');
+const mensagemErro = document.getElementById('mensagemErro');
 
+formularioMatricula.addEventListener('submit', function(event) {
+    event.preventDefault();
 
+    const selects = [
+        document.getElementById('cursosTecnicos'),
+        document.getElementById('cursosGraduacao'),
+        document.getElementById('cursosLivres'),
+        document.getElementById('Idiomas')
+    ];
+
+    const cursoSelecionado = selects.some(select => select.value !== '');
+    const formularioValido = nome !== '' && email !== '' && telefone !== '' && cursoSelecionado;
+
+    if (formularioValido) {
+        mensagemSucesso.style.display = 'block';
+        mensagemErro.style.display ='none';
+    } else {
+        mensagemErro.style.display = 'block';
+        mensagemSucesso.style.display = 'none';
+    }
+});
