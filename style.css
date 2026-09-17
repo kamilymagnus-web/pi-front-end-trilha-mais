@@ -28,14 +28,14 @@ nav {
 }
 
 
-a {
+nav a {
     color: #fff;
     text-decoration: none;
     margin: 0 15px;
     padding: 5px 10px;
 }
 
-a:hover {
+nav a:hover {
     background-color: #7a0404;
     border-radius: 50px;
 }
@@ -50,6 +50,7 @@ nav input[type="text"] {
 .container {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
     margin-bottom: 30px;
 }
@@ -67,25 +68,25 @@ nav input[type="text"] {
     box-sizing: border-box;
 }
 
-.card img {
+.card img, .card-curso img {
     width: 100%;
     height: 180px;
     object-fit: cover;
     border-radius: 20px;
 }
 
-.card h2 {
+.card h2{
     font-family: "Times New Roman", Times, serif;
     color: #333;
     margin: 15px 0 10px;
 }
 
-.card p {
+.card p{
     color: #666;
     text-align: center;
 }
 
-.card button {
+.card button{
     font-family: "Times New Roman", Times, serif;
     font-size: 1rem;
     margin-top: auto;
@@ -369,10 +370,37 @@ hr {
     box-shadow: 0 0 0 5px rgba(13, 237, 46, 0.25);
 }
 
-.painelCursos section div {
+/*.painelCursos section div {
     background-color:#dfdddf97;
     padding: 12px;
     border-radius: 20px;
     font-size: 20px;
     color:#b83434;
+}*/
+
+
+.card-curso{
+    background-color:#dfdddf97;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 300px;
+    height: 420px;
+    max-width: max-content;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.card-curso a{
+    color: #333;
+    text-decoration: none;
+}
+
+.card-curso h5{
+    font-size: 100%;
+    color: #666;
 }
