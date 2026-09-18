@@ -410,23 +410,3 @@ hr {
     font-size: 100%;
     color: #666;
 }
-
-.botaoInformatica{
-    display: flex;
-    justify-content: center;
-    align-items: row;
-    border: none;
-    padding: 10px;
-    margin: 1px;
-    border-radius: 5px;
-}
-
-.botaoRedes{
-    display: flex;
-    justify-content: center;
-    align-items: row;
-    border: none;
-    padding: 10px;
-    margin: 1px;
-    border-radius: 5px;
-}
