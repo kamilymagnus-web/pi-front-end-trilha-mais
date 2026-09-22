@@ -75,7 +75,7 @@ select {
 
 button {
     padding: 10px;
-    background-color: #7a0404;
+    background-color: #9d0505;
     color: white;
     border: none;
     border-radius: 5px;
@@ -83,5 +83,5 @@ button {
 }
 
 button:hover {
-    background-color: #483d8b;
+    background-color: #7a0404;
 }
