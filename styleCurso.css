@@ -218,11 +218,71 @@ main > h2 {
     background-color: #7a0404;
 }
 
-/* CARDS DAS INFORMAÇÕES */
+/* pag aromaterapia */
 .sobreAromaterapia,
 .objetivoAromaterapia,
 .moduloAromaterapia,
 .requisitoAromaterapia {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #000000;
+}
+
+/*pag informatuica*/
+.sobreInformatica,
+.objetivoInformatica,
+.moduloInformatica,
+.requisitoInformatica{
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #000000;
+}
+
+/*pag ingles*/
+.sobreIngles,
+.objetivoIngles,
+.moduloIngles,
+.requisitoIngles{
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #000000;
+}
+
+/*pag meca*/
+.sobreMecatronica,
+.objetivoMecatronica,
+.moduloMecatronica,
+.requisitoMecatronica{
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #000000;
+}
+
+/*pag psico*/
+.sobrePsicologia,
+.objetivoPsicologia,
+.moduloPsicologia,
+.requisitoPsicologia{
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #000000;
+}
+
+/*pag redes*/
+.sobreRedes,
+.objetivoRedes,
+.moduloRedes,
+.requisitoRedes{
     background-color: white;
     padding: 25px;
     margin-bottom: 20px;
