@@ -8,10 +8,12 @@ campoPesquisa.addEventListener('input', function() {
         const titulo = curso.querySelector('h2', 'h3'). textContent.toLowerCase();
 
         if (titulo.includes (termo)) {
-            curso.sty
+            curso.style.display = '';
+        } else {
+            curso.style.display ='none';
         }
-    })
-})
+    });
+});
 
 const categoriaperfil = document.getElementById('categoriaPerfil');
 const paineisPerfil = document.querySelectorAll('.painelPerfil');
