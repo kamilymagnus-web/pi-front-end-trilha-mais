@@ -8,7 +8,7 @@ campoPesquisa.addEventListener('input', function() {
         const titulo = curso.querySelector('h2', 'h3'). textContent.toLowerCase();
 
         if (titulo.includes (termo)) {
-         curso
+            curso.sty
         }
     })
 })
