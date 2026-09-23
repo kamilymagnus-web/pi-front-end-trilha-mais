@@ -1,3 +1,18 @@
+const campoPesquisa = document.getElementById('pesquisa');
+
+campoPesquisa.addEventListener('input', function() {
+    const termo = campoPesquisa.value.toLowerCase();
+    const cursos = document.querySelectorAll('.curso');
+
+    cursos.forEach(function(curso){
+        const titulo = curso.querySelector('h2', 'h3'). textContent.toLowerCase();
+
+        if (titulo.includes (termo)) {
+         curso
+        }
+    })
+})
+
 const categoriaperfil = document.getElementById('categoriaPerfil');
 const paineisPerfil = document.querySelectorAll('.painelPerfil');
 const filtrarPerfil = document.getElementById('filtrarPerfil');
