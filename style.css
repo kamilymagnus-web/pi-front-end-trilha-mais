@@ -28,7 +28,7 @@ nav {
 }
 
 
-nav a {
+a {
     color: #fff;
     text-decoration: none;
     margin: 0 15px;
@@ -399,11 +399,6 @@ hr {
     padding: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
-}
-
-.card-curso a{
-    color: #333;
-    text-decoration: none;
 }
 
 .card-curso h5{

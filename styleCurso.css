@@ -1,0 +1,302 @@
+/*body{
+    font-family: "Times New Roman", Times, serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+header {
+    background-color: #9d0505;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 0 20px;
+}
+
+
+a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 5px 10px;
+}
+
+nav a:hover {
+    background-color: #7a0404;
+    border-radius: 50px;
+}
+
+nav input[type="text"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+}
+
+.paragrafo, 
+.sobreAromaterapia, 
+.objetivoAromaterapia, 
+.moduloAromaterapia,
+.requisitoAromaterapia{
+    align-items: center;
+    text-align: center;
+    padding: 10px 0;
+    margin: 10px;
+    position: relative;
+    bottom: 0;
+    border:2px solid #7a0404;
+    border-radius: 50px;
+    width: 100%;
+}
+
+.div li{
+    align-items: center;
+    text-align: center;
+}
+
+.botaoCursos{
+    
+    display: flex;
+    justify-content: center;
+    align-items: row;
+    border: none;
+    border-radius: 5px;
+}
+
+button{
+    display: flex;
+    justify-content: center;
+    align-items: row;
+    text-align: center;
+    background-color: #9d0505;
+    color: #fff;
+    border: none;
+    width: 100px;
+    height: 50px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 80px;
+    cursor: pointer;
+}
+
+li{
+    list-style-position: inside;
+}
+
+.imagem{
+    border: 2px solid #9d0505;
+    border-radius: 80px;
+    height: 400px;
+}
+
+.imagem img{
+    width: 100%;
+    height: 100%;
+    border-radius: 80px;
+}*/
+
+
+body{
+    font-family: "Times New Roman", Times, serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+header {
+    background-color: #9d0505;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 0 10px;
+    height: 20px;
+}
+
+
+a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 5px 10px;
+}
+
+nav a:hover {
+    background-color: #7a0404;
+    border-radius: 50px;
+}
+
+nav input[type="text"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+}
+
+
+main {
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+main > h2 {
+    text-align: center;
+    color: #7a0404;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* PARÁGRAFO E INFORMAÇÕES */
+.paragrafo {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px #00000015;
+}
+
+.paragrafo p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.paragrafo ul {
+    padding-left: 20px;
+}
+
+.paragrafo li {
+    margin: 8px 0;
+}
+
+/* BOTÕES */
+.botaoCursos {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.botao button {
+    background-color: #9d0505;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 80px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.botao button:hover {
+    background-color: #7a0404;
+}
+
+/* pag aromaterapia */
+.sobreAromaterapia,
+.objetivoAromaterapia,
+.moduloAromaterapia,
+.requisitoAromaterapia {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #000000;
+}
+
+/*pag informatuica*/
+.sobreInformatica,
+.objetivoInformatica,
+.moduloInformatica,
+.requisitoInformatica{
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #000000;
+}
+
+/*pag ingles*/
+.sobreIngles,
+.objetivoIngles,
+.moduloIngles,
+.requisitoIngles{
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #000000;
+}
+
+/*pag meca*/
+.sobreMecatronica,
+.objetivoMecatronica,
+.moduloMecatronica,
+.requisitoMecatronica{
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #000000;
+}
+
+/*pag psico*/
+.sobrePsicologia,
+.objetivoPsicologia,
+.moduloPsicologia,
+.requisitoPsicologia{
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #000000;
+}
+
+/*pag redes*/
+.sobreRedes,
+.objetivoRedes,
+.moduloRedes,
+.requisitoRedes{
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #000000;
+}
+
+.imagem img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    border: 3px solid #7a0404;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px #00000015;
+}

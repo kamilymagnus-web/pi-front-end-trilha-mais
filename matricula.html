@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matriculas</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Trilha.com</title>
+    <link rel="stylesheet" href="styleMat.css">
     <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Matrículas</h1>
+        <h1>Trilha.com</h1>
         <nav>
             <a href="index.html">Home</a>
             <a href="cursos.html">Cursos</a>
@@ -19,57 +19,19 @@
     </header>
 <main>
     <h2>Formulário de Matrícula</h2>
-    <form id="formularioMatricula">
+
+    <form id="formMatricula">
         <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome">
+        <input type="text" id="nome" name="nome" placeholder="Digite Seu Nome">
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
+        <input type="email" id="email" name="email" placeholder="Digite Seu Email">
         <label for="telefone">Telefone:</label>
-        <input type="tel" id="telefone" name="telefone">
-        
-        </label>
-        <select id="cursosTecnicos" name="curso" >
-            <option value="">Cursos Técnicos</option>
-            <option value="curso1">Informática</option>
-            <option value="curso2">Redes</option>
-            <option value="curso3">Administração</option>
-            <option value="curso4">Farmácia</option>
-            <option value="curso5">Turismo</option>
-            <option value="curso6">ÁudioVisual</option>
-        </select>
+        <input type="tel" id="telefone" name="telefone" placeholder="Digite Seu Telefone">
 
-        <label for="curso">Curso:</label>
-        <select id="cursosGraduacao" name="curso" >
-            <option value="">Cursos de Graduação</option>
-            <option value="curso1">Psicologia</option>
-            <option value="curso2">Mecatrônica</option>
-            <option value="curso3">Medicina</option>
-            <option value="curso4">Direito</option>
-            <option value="curso5">Engenharia de Software</option>
-            <option value="curso6">Marketing</option>
-        </select>
-        <select id="cursosLivres" name="curso" >
-            <option value="">Cursos Livres</option>
-            <option value="curso1">Aromaterapia</option>
-            <option value="curso2">Dança</option>
-            <option value="curso3">Teatro</option>
-            <option value="curso4">Pintura em tela</option>
-            <option value="curso5">Cerâmica</option>
-            <option value="curso6">Biscuit</option>
-        </select>
-
-        <select id="Idiomas" name="Idiomas">
-            <option value="">Cursos de Idiomas</option>
-            <option value="Ingles">Inglês</option>
-            <option value="Espanhol">Espanhol</option>
-            <option value="curso1">Francês</option>
-            <option value="curso2">Italiano</option>
-            <option value="curso3">Japonês</option>
-            <option value="curso4">Valiriano</option>
-        </select> 
 
     <button type="submit">Enviar Matrícula</button>
     </form>
+
     <p id="mensagemSucesso" style="display: none; color:green">Matrícula enviada com sucesso!</p>
     <p id="mensagemErro" style="display:none; color:red">Preencha todos os campos e confirme o curso antes de enviar.</p>
 </main>
