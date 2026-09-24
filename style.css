@@ -405,3 +405,17 @@ hr {
     font-size: 100%;
     color: #666;
 }
+
+.voltar{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.voltar button{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+    background-color: #510303;
+    color:#fff;
+    border-radius: 20px;
+}
