@@ -137,22 +137,18 @@ if (filtrarCursos) {
     });
 }
 
-const formularioMatricula = document.getElementById('formularioMatricula');
+const formMatricula = document.getElementById('formMatricula');
 const mensagemSucesso = document.getElementById('mensagemSucesso');
 const mensagemErro = document.getElementById('mensagemErro');
 
-formularioMatricula.addEventListener('submit', function(event) {
+formMatricula.addEventListener('submit', function(event) {
     event.preventDefault();
 
-    const selects = [
-        document.getElementById('cursosTecnicos'),
-        document.getElementById('cursosGraduacao'),
-        document.getElementById('cursosLivres'),
-        document.getElementById('Idiomas')
-    ];
+    const nome = document.getElementById('nome').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const telefone = document.getElementById ('telefone').value.trim();
 
-    const cursoSelecionado = selects.some(select => select.value !== '');
-    const formularioValido = nome !== '' && email !== '' && telefone !== '' && cursoSelecionado;
+    const formularioValido = nome !== '' && email !== '' && telefone;
 
     if (formularioValido) {
         mensagemSucesso.style.display = 'block';
