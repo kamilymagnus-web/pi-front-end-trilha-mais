@@ -299,9 +299,18 @@ footer {
 
 .informacoes-pessoais {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
+    border: 1px solid black;
+    padding: 0px;
+    margin: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #000000;
+}
+.informacoes-pessoais h3{
+    text-decoration: underline;
 }
 
 .painel-documentos {
@@ -313,16 +322,22 @@ footer {
 
 .painel-documentos form {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
-    border: 1px solid black;
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #000000;
 }
 
 .painel-documentos form input[type="file"] {
     margin-bottom: 10px;
+    margin: 20px;
+    padding: 25px;
+    border: 1px solid #000000;
+    border-radius: 12px;
 }
 
 .painel-documentos h3 {
