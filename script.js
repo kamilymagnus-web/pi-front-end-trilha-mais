@@ -1,19 +1,68 @@
-const campoPesquisa = document.getElementById('pesquisa');
+const indice = [
+    { titulo: "Informática", url: "informatica.html", palavras: ["informática", "tecnico", "redes"] },
+    { titulo: "Redes", url: "redes.html", palavras: ["redes"] },
+    { titulo: "Administração", url: "administracao.html", palavras: ["administração"] },
+    { titulo: "Fármacia", url: "farmacia.html", palavras: ["farmacia", "farmácia"] },
+    { titulo: "Turismo", url: "turismo.html", palavras: ["turismo"] },
+    { titulo: "Audiovisual", url: "audiovisual.html", palavras: ["audiovisual"] },
+    { titulo: "Psicologia", url: "psicologia.html", palavras: ["psicologia"] },
+    { titulo: "Mecatrônica", url: "mecatronica.html", palavras: ["mecatronica", "mecatrônica"] },
+    { titulo: "Medicina", url: "medicina.html", palavras: ["medicina"] },
+    { titulo: "Direito", url: "direito.html", palavras: ["direito"] },
+    { titulo: "Engenharia de Software", url: "engenharia-de-software.html", palavras: ["engenharia", "software"] },
+    { titulo: "Marketing", url: "marketing.html", palavras: ["marketing"] },
+    { titulo: "Aromaterapia", url: "aromaterapia.html", palavras: ["aromaterapia", "saúde", "bem-estar"] },
+    { titulo: "Dança", url: "danca.html", palavras: ["dança", "dança livre"] },
+    { titulo: "Teatro", url: "teatro.html", palavras: ["teatro"] },
+    { titulo: "Pintura em Tela", url: "pintura-em-tela.html", palavras: ["pintura"] },
+    { titulo: "Cerâmica", url: "ceramica.html", palavras: ["ceramica", "cerâmica"] },
+    { titulo: "Biscuit", url: "biscuit.html", palavras: ["biscuit"] },
+    { titulo: "Inglês", url: "ingles.html", palavras: ["ingles", "inglês"] },
+    { titulo: "Espanhol", url: "espanhol.html", palavras: ["espanhol"] },
+    { titulo: "Francês", url: "frances.html", palavras: ["frances", "francês"] },
+    { titulo: "Italiano", url: "italiano.html", palavras: ["italiano"] },
+    { titulo: "Japonês", url: "japones.html", palavras: ["japones", "japonês"] },
+    { titulo: "Valiriano", url: "valiriano.html", palavras: ["valiriano"] },
+    { titulo: "Perfil", url: "perfil.html", palavras: ["perfil", "conta"] },
+    { titulo: "Home", url: "index.html", palavras: ["home", "inicio", "início"] },
+];
+const formPesquisa = document.getElementById('formPesquisa');
+    formPesquisa.addEventListener('submit', function (evento){
+        evento.preventDefault();
+        const termo = document.getElementById('pesquisa').value.trim().toLowerCase();
 
-campoPesquisa.addEventListener('input', function() {
-    const termo = campoPesquisa.value.toLowerCase();
-    const cursos = document.querySelectorAll('.curso');
+        const resultado = indice.find(function(pagina){
+            return pagina.titulo.toLowerCase().includes(termo) || pagina.palavras.some(function(palavra){return palavra.includes(termo);});
+        });
 
-    cursos.forEach(function(curso){
-        const titulo = curso.querySelector('h2', 'h3'). textContent.toLowerCase();
+        if (!resultado){
+            alert('Nenhum resultado encontrado para:' + termo);
+            return;
+        }
+        window.location.href = `${resultado.url}?busca=${encodeURIComponent(termo)}`;
+    });
 
-        if (titulo.includes (termo)) {
-            curso.style.display = '';
-        } else {
-            curso.style.display ='none';
+const params = new URLSearchParams(window.location.search);
+const termoBusca = params.get('busca');
+
+if (termoBusca) {
+    document.getElementById('pesquisa').value = termoBusca;
+    
+    const termo = termoBusca.toLowerCase();
+    let primeiroResultado = null;
+    
+    const elementos = document.querySelectorAll('h1, h2, h3, h4, p , li');
+    elementos.forEach(function(el){
+        if (el.textContent.toLowerCase().includes(termo)){
+            el.classList.add('destaque');
+            if(!primeiroResultado) primeiroResultado = el;
         }
     });
-});
+    
+    if (primeiroResultado){
+        primeiroResultado.scrollIntoView({behavior: 'smooth', block: 'center'});
+    }      
+}
 
 const categoriaperfil = document.getElementById('categoriaPerfil');
 const paineisPerfil = document.querySelectorAll('.painelPerfil');
@@ -88,22 +137,18 @@ if (filtrarCursos) {
     });
 }
 
-const formularioMatricula = document.getElementById('formularioMatricula');
+const formMatricula = document.getElementById('formMatricula');
 const mensagemSucesso = document.getElementById('mensagemSucesso');
 const mensagemErro = document.getElementById('mensagemErro');
 
-formularioMatricula.addEventListener('submit', function(event) {
+formMatricula.addEventListener('submit', function(event) {
     event.preventDefault();
 
-    const selects = [
-        document.getElementById('cursosTecnicos'),
-        document.getElementById('cursosGraduacao'),
-        document.getElementById('cursosLivres'),
-        document.getElementById('Idiomas')
-    ];
+    const nome = document.getElementById('nome').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const telefone = document.getElementById ('telefone').value.trim();
 
-    const cursoSelecionado = selects.some(select => select.value !== '');
-    const formularioValido = nome !== '' && email !== '' && telefone !== '' && cursoSelecionado;
+    const formularioValido = nome !== '' && email !== '' && telefone;
 
     if (formularioValido) {
         mensagemSucesso.style.display = 'block';
