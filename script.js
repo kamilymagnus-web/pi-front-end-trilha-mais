@@ -141,20 +141,22 @@ const formMatricula = document.getElementById('formMatricula');
 const mensagemSucesso = document.getElementById('mensagemSucesso');
 const mensagemErro = document.getElementById('mensagemErro');
 
-formMatricula.addEventListener('submit', function(event) {
-    event.preventDefault();
+if (formMatricula) {
+    formMatricula.addEventListener('submit', function(event) {
+        event.preventDefault();
 
-    const nome = document.getElementById('nome').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const telefone = document.getElementById ('telefone').value.trim();
+        const nome = document.getElementById('nome').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const telefone = document.getElementById ('telefone').value.trim();
 
-    const formularioValido = nome !== '' && email !== '' && telefone;
+        const formularioValido = nome !== '' && email !== '' && telefone;
 
-    if (formularioValido) {
-        mensagemSucesso.style.display = 'block';
-        mensagemErro.style.display ='none';
-    } else {
-        mensagemErro.style.display = 'block';
-        mensagemSucesso.style.display = 'none';
-    }
-});
+        if (formularioValido) {
+            mensagemSucesso.style.display = 'block';
+            mensagemErro.style.display ='none';
+        } else {
+            mensagemErro.style.display = 'block';
+            mensagemSucesso.style.display = 'none';
+        }
+    });
+}
