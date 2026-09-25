@@ -1,0 +1,240 @@
+body{
+    font-family: "Times New Roman", Times, serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #9d0505;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 0 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 5px 10px;
+}
+
+#formPesquisa {
+    margin-left: auto;
+}
+
+#pesquisa {
+    padding: 8px;
+    border-radius: 20px;
+    border: none;
+}
+
+.banner {
+    background-image: linear-gradient(90deg, #510303 0%, #9d0505 35%, #f13131 100%);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 180px;
+    top: 2%;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.banner img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.banner h1{
+    font-family: "Times New Roman", Times, serif;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.banner p{
+    font-family: "Times New Roman", Times, serif;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.Meus-Cursos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.Meus-Cursos select, 
+.documentos select {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+
+#documento::file-selector-button, #certificado::file-selector-button {
+    background-color: #9d0505;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#documento::file-selector-button:hover, #certificado::file-selector-button:hover {
+    background-color: #7a0404;
+}
+
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 230px;
+    height: 350px;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.card h2,
+.card p {
+    margin: 10px;
+}
+
+button {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1rem;
+    margin-top: auto;
+    background-color: #9d0505;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #7a0404;
+}
+
+
+.informacoes-pessoais {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+
+.documentos {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.painel-documentos {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #000000;
+}
+
+.painel-documentos form input[type="file"] {
+    margin-bottom: 10px;
+    margin: 20px;
+    padding: 25px;
+    border: 1px solid #000000;
+    border-radius: 12px;
+}
+
+
+#sobre {
+    background-color: #ddd;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+footer {
+    background-color: #9d0505;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* css edição kami */
+
+.painelPerfil {
+    display:none
+}
+
+.painelCursos {
+    display:block;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding:20px;
+    margin-top: 20px;
+    background-color: #e1a1a19e;  
+}
+
+.painelCursos.ativo {
+    opacity: 1;
+    border: 2px solid #444
+}
+
+.painelCursos h3 {
+    font-size: 25px;
+    margin-top: 0;
+    color:rgb(188, 5, 39)
+}
+
+.painelCursos.selecionado {
+    border-color:#34b843;
+    box-shadow: 0 0 0 5px rgba(13, 237, 46, 0.25);
+}
+
