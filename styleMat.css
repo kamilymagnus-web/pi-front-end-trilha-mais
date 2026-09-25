@@ -55,7 +55,7 @@ form {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background-color: #9d0505;
+    background-color: #9d0505eb;
     border-radius: 10px;
     box-shadow: 0 0 10px #ccc;
 }
