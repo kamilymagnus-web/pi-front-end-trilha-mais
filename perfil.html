@@ -100,32 +100,78 @@
                     <p>Lista de cursos que você está atualmente matriculado.</p>
 
                     <div class="container">
-                        <div class="card">
+                        <div class="card" data-curso="informatica">
                             <img src="images//curso.jpg" alt="curso-img">
                             <h2>Informática</h2>
                             <p>Técnico | Presencial</p>
-                            <a href="informatica.html"><button>Ver Detalhes</button></a>
-                        </div>
-                        <div class="card">
-                            <img src="images//aroma.jpg" alt="curso-img">
-                            <h2>Aromaterapia</h2>
-                            <p>Livre | Presencial</p>
-                            <a href="aromaterapia.html"><button>Ver Detalhes</button></a>
-                        </div>
-                        <div class="card">
+
+                            <div class="progresso">
+                                <div class="barra-progresso">
+                                <div class="barra-preenchida"></div>
+                                </div>
+                                <span class="progresso-texto">0% concluído</span>
+                            </div>
+                        
+                            <ul class="lista-aulas">
+                                <li><label><input type="checkbox" data-aula="aula1"> Aula 1 - Introdução</label></li>
+                                <li><label><input type="checkbox" data-aula="aula2"> Aula 2 - Hardware</label></li>
+                                <li><label><input type="checkbox" data-aula="aula3"> Aula 3 - Software</label></li>
+                                <li><label><input type="checkbox" data-aula="aula4"> Aula 4 - Redes</label></li>
+                            </ul>
+                        
+                                    <a href="informatica.html"><button>Ver Detalhes</button></a>
+                                    <button class="btn-cancelar" type="button">Cancelar Matrícula</button>
+                        </div><br><br>
+                    
+
+                        <div class="card" data-curso="marketing">
                             <img src="images//mark.jpg" alt="curso-img">
                             <h2>Marketing</h2>
                             <p>Graduação | Presencial</p>
+
+                            <div class="progresso">
+                                <div class="barra-progresso">
+                                <div class="barra-preenchida"></div>
+                                </div>
+                                <span class="progresso-texto">0% concluído</span>
+                            </div>
+                    
+                            <ul class="lista-aulas">
+                                <li><label><input type="checkbox" data-aula="aula1"> Aula 1 - Fundamentos de Marketing</label></li>
+                                <li><label><input type="checkbox" data-aula="aula2"> Aula 2 - Comportamento do Consumidor</label></li>
+                                <li><label><input type="checkbox" data-aula="aula3"> Aula 3 - Marketing Digital</label></li>
+                                <li><label><input type="checkbox" data-aula="aula4"> Aula 4 - Estratégias de Marca</label></li>
+                                <li><label><input type="checkbox" data-aula="aula5"> Aula 5 - Análise de Mercado</label></li>
+                                <li><label><input type="checkbox" data-aula="aula6"> Aula 6 - Projeto Final</label></li>
+                            </ul>
+                    
                             <a href=""><button>Ver Detalhes</button></a>
+                            <button class="btn-cancelar" type="button">Cancelar Matrícula</button>
                         </div>
-                        <div class="card">
+                            
+                        <div class="card" data-curso="administracao">
                             <img src="images//adm.jpg" alt="curso-img">
                             <h2>Administração</h2>
                             <p>Técnico | Presencial</p>
+
+                            <div class="progresso">
+                                <div class="barra-progresso">
+                                <div class="barra-preenchida"></div>
+                                </div>
+                                <span class="progresso-texto">0% concluído</span>
+                            </div>
+                    
+                            <ul class="lista-aulas">
+                                <li><label><input type="checkbox" data-aula="aula1"> Aula 1 - Introdução à Administração</label></li>
+                                <li><label><input type="checkbox" data-aula="aula2"> Aula 2 - Gestão de Pessoas</label></li>
+                                <li><label><input type="checkbox" data-aula="aula3"> Aula 3 - Planejamento Estratégico</label></li>
+                                <li><label><input type="checkbox" data-aula="aula4"> Aula 4 - Finanças Básicas</label></li>
+                            </ul>
+                    
                             <a href=""><button>Ver Detalhes</button></a>
+                            <button class="btn-cancelar" type="button">Cancelar Matrícula</button>
                         </div>
                     </div>
-                </div>
 
                 <div class="painelPerfil" id="concluidos">
                     <h3>Cursos Concluídos</h3>

@@ -85,7 +85,8 @@ if (filtrarPerfil) {
             painelSelecionado.style.display = "block"; 
         }
     });
-}    
+} 
+
 
 const categoriaDocumentos = document.getElementById('categoria-documentos');
 const paineisDocumentos = document.querySelectorAll('.painel-documentos');
@@ -160,3 +161,72 @@ if (formMatricula) {
         }
     });
 }
+
+const cardsAndamento = document.querySelectorAll('#andamento .card');
+cardsAndamento.forEach(inicializarCard);
+
+function chaveProgresso(cursoId) {
+    return `progresso-${cursoId}`;
+}
+
+function carregarProgresso(cursoId) {
+    const dados = localStorage.getItem(chaveProgresso(cursoId));
+    return dados ? JSON.parse(dados) : { aulas: {}, cancelado: false };
+}
+
+function salvarProgresso(cursoId, progresso) {
+    localStorage.setItem(chaveProgresso(cursoId), JSON.stringify(progresso));
+}
+
+function calcularPorcentagem(progresso, totalAulas) {
+    const concluidas = Object.values(progresso.aulas).filter(Boolean).length;
+    return totalAulas > 0 ? Math.round((concluidas / totalAulas) * 100) : 0;
+}
+
+function atualizarBarra(card, porcentagem) {
+    card.querySelector('.barra-preenchida').style.width = porcentagem + '%';
+    card.querySelector('.progresso-texto').textContent = porcentagem + '% concluído';
+}
+
+function inicializarCard(card) {
+    const cursoId = card.dataset.curso;
+    const progresso = carregarProgresso(cursoId);
+    const checkboxes = card.querySelectorAll('.lista-aulas input[type="checkbox"]');
+
+    if (progresso.cancelado) {
+        card.style.display = 'none';
+        return;
+    }
+
+    checkboxes.forEach(function(checkbox) {
+        checkbox.checked = !!progresso.aulas[checkbox.dataset.aula];
+    });
+    
+    atualizarBarra(card, calcularPorcentagem(progresso, checkboxes.length));
+    
+    checkboxes.forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+        const atual = carregarProgresso(cursoId);
+        atual.aulas[checkbox.dataset.aula] = checkbox.checked;
+        salvarProgresso(cursoId, atual);
+        atualizarBarra(card, calcularPorcentagem(atual, checkboxes.length));
+        });
+    });
+    
+    const botaoCancelar = card.querySelector('.btn-cancelar');
+    if (botaoCancelar) {
+        botaoCancelar.addEventListener('click', function() {
+        const confirmar = confirm(
+            'Tem certeza que deseja cancelar a matrícula?\n' +
+            'Seu progresso será mantido salvo — se você se matricular novamente, poderá continuar de onde parou.'
+        );
+
+        if (confirmar) {
+            const atual = carregarProgresso(cursoId);
+            atual.cancelado = true;
+            salvarProgresso(cursoId, atual);
+            card.style.display = 'none';
+        }
+        });
+    }
+    }

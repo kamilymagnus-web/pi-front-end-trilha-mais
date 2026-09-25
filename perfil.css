@@ -117,8 +117,8 @@ nav a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 230px;
-    height: 350px;
+    width: 530px;
+    height: 550px;
     border: 1px solid black;
     border-radius: 20px;
     padding: 20px;
@@ -237,4 +237,44 @@ footer {
     border-color:#34b843;
     box-shadow: 0 0 0 5px rgba(13, 237, 46, 0.25);
 }
+
+
+/* CSS KAMI PT2*/
+
+.barra-progresso {
+    background-color: #ddd;
+    border-radius: 5px;
+    height: 10px;
+    overflow: hidden;
+    margin: 5px 0;
+}
+ 
+.barra-preenchida {
+    background-color: #2e8b57;
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+ 
+.progresso-texto {
+    font-size: 0.85rem;
+    color: #555;
+}
+ 
+.lista-aulas {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin: 10px 0;
+}
+ 
+.btn-cancelar {
+    background-color: #c0392b;
+    margin-top: 8px;
+}
+ 
+.btn-cancelar:hover {
+    background-color: #922b21;
+}
+ 
 
