@@ -13,7 +13,6 @@ h1{
     margin-top: 20px;
 }
 
-
 header {
     background-color: #9d0505;
     color: #fff;
@@ -98,6 +97,11 @@ nav input[type="text"] {
     cursor: pointer;
 }
 
+#sobre {
+    background-color: #ddd;
+    padding: 30px;
+    margin-top: 20px;
+}
 
 /*
 .container {
@@ -231,121 +235,6 @@ footer {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-
-.Meus-Cursos, .documentos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.Meus-Cursos h3 {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    font-family: "Times New Roman", Times, serif;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.Meus-Cursos select, .documentos select {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-}
-
-.Meus-Cursos select option{
-    font-family: "Times New Roman", Times, serif;
-    font-size: 1rem;
-}
-
-.Meus-Cursos button, .documentos button{
-    font-family: "Times New Roman", Times, serif;
-    font-size: 1rem;
-    margin-top: auto;
-    background-color: #9d0505;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.Meus-Cursos button:hover, .documentos button:hover{
-    background-color: #7a0404;
-}
-
-
-
-#documento::file-selector-button, #certificado::file-selector-button {
-    background-color: #9d0505;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#documento::file-selector-button:hover, #certificado::file-selector-button:hover {
-    background-color: #7a0404;
-}
-
-
-.Meus-Cursos button:hover {
-    background-color: #7a0404;
-}
-
-
-.informacoes-pessoais {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    border: 1px solid black;
-    padding: 0px;
-    margin: 30px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px #000000;
-}
-.informacoes-pessoais h3{
-    text-decoration: underline;
-}
-
-.painel-documentos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.painel-documentos form {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
-    padding: 30px;
-    margin-bottom: 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px #000000;
-}
-
-.painel-documentos form input[type="file"] {
-    margin-bottom: 10px;
-    margin: 20px;
-    padding: 25px;
-    border: 1px solid #000000;
-    border-radius: 12px;
-}
-
-.painel-documentos h3 {
-    font-family: "Times New Roman", Times, serif;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
 p {
     font-family: "Times New Roman", Times, serif;
     font-size: 1.2rem;
@@ -359,37 +248,6 @@ hr {
     height: 2px;
 }
 
-/* css edição kami */
-
-.painelPerfil {
-    display:none
-}
-
-.painelCursos {
-    display:block;
-    transition: all 0.3s ease-in-out;
-    border: 2px solid black;
-    border-radius: 10px;
-    padding:20px;
-    margin-top: 20px;
-    background-color: #e1a1a19e;  
-}
-
-.painelCursos.ativo {
-    opacity: 1;
-    border: 2px solid #444
-}
-
-.painelCursos h3 {
-    font-size: 25px;
-    margin-top: 0;
-    color:rgb(188, 5, 39)
-}
-
-.painelCursos.selecionado {
-    border-color:#34b843;
-    box-shadow: 0 0 0 5px rgba(13, 237, 46, 0.25);
-}
 
 /*.painelCursos section div {
     background-color:#dfdddf97;
