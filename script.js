@@ -162,7 +162,7 @@ if (formMatricula) {
     });
 }
 
-const cardsAndamento = document.querySelectorAll('#andamento .card');
+const cardsAndamento = document.querySelectorAll('#andamento .card-andamento');
 cardsAndamento.forEach(inicializarCard);
 
 function chaveProgresso(cursoId) {
