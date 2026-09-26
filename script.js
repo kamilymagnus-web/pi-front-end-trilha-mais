@@ -162,25 +162,22 @@ if (formMatricula) {
     });
 }
 
-const cardsAndamento = document.querySelectorAll('#andamento .card-andamento');
-cardsAndamento.forEach(inicializarCard);
-
 function chaveProgresso(cursoId) {
     return `progresso-${cursoId}`;
 }
 
 function carregarProgresso(cursoId) {
     const dados = localStorage.getItem(chaveProgresso(cursoId));
-    return dados ? JSON.parse(dados) : { aulas: {}, cancelado: false };
+    return dados ? JSON.parse(dados) : { modulos: {}, cancelado: false };
 }
 
 function salvarProgresso(cursoId, progresso) {
     localStorage.setItem(chaveProgresso(cursoId), JSON.stringify(progresso));
 }
 
-function calcularPorcentagem(progresso, totalAulas) {
-    const concluidas = Object.values(progresso.aulas).filter(Boolean).length;
-    return totalAulas > 0 ? Math.round((concluidas / totalAulas) * 100) : 0;
+function calcularPorcentagem(progresso, totalModulos) {
+    const concluidas = Object.values(progresso.modulos).filter(Boolean).length;
+    return totalModulos > 0 ? Math.round((concluidas / totalModulos) * 100) : 0;
 }
 
 function atualizarBarra(card, porcentagem) {
@@ -191,7 +188,7 @@ function atualizarBarra(card, porcentagem) {
 function inicializarCard(card) {
     const cursoId = card.dataset.curso;
     const progresso = carregarProgresso(cursoId);
-    const checkboxes = card.querySelectorAll('.lista-aulas input[type="checkbox"]');
+    const checkboxes = card.querySelectorAll('.lista-modulos input[type="checkbox"]');
 
     if (progresso.cancelado) {
         card.style.display = 'none';
@@ -199,7 +196,7 @@ function inicializarCard(card) {
     }
 
     checkboxes.forEach(function(checkbox) {
-        checkbox.checked = !!progresso.aulas[checkbox.dataset.aula];
+        checkbox.checked = !!progresso.modulos[checkbox.dataset.modulo];
     });
     
     atualizarBarra(card, calcularPorcentagem(progresso, checkboxes.length));
@@ -207,7 +204,7 @@ function inicializarCard(card) {
     checkboxes.forEach(function(checkbox) {
         checkbox.addEventListener('change', function() {
         const atual = carregarProgresso(cursoId);
-        atual.aulas[checkbox.dataset.aula] = checkbox.checked;
+        atual.modulos[checkbox.dataset.modulo] = checkbox.checked;
         salvarProgresso(cursoId, atual);
         atualizarBarra(card, calcularPorcentagem(atual, checkboxes.length));
         });
@@ -229,4 +226,6 @@ function inicializarCard(card) {
         }
         });
     }
-    }
+}
+const cardsAndamento = document.querySelectorAll('#andamento .card-andamento');
+    cardsAndamento.forEach(inicializarCard);
