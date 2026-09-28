@@ -1,7 +1,7 @@
 const indice = [
     { titulo: "Informática", url: "informatica.html", palavras: ["informática", "info", "informatica"] },
     { titulo: "Redes", url: "redes.html", palavras: ["redes, rede"] },
-    { titulo: "Administração", url: "administracao.html", palavras: ["administração", "adm", "admin"] },
+    { titulo: "Administração", url: "administracao.html", palavras: ["administração", "administracao", "adm", "admin"] },
     { titulo: "Fármacia", url: "farmacia.html", palavras: ["farmacia", "farmácia", "farm"] },
     { titulo: "Turismo", url: "turismo.html", palavras: ["turismo"] },
     { titulo: "Audiovisual", url: "audiovisual.html", palavras: ["audiovisual"] },
@@ -25,10 +25,10 @@ const indice = [
     { titulo: "Valiriano", url: "valiriano.html", palavras: ["valiriano"] },
     { titulo: "Perfil", url: "perfil.html", palavras: ["perfil", "conta"] },
     { titulo: "Home", url: "index.html", palavras: ["home", "inicio", "início"] },
-    { titulo: "Técnico", url: "cursos.html", palavras: ["tecnico", "tec", "técnico"] },
-    { titulo: "Graduação", url: "cursos.html", palavras: ["graduacao", "graduação", "grad"] },
-    { titulo: "Livre", url: "cursos.html", palavras: ["livre"] },
-    { titulo: "Idiomas", url: "cursos.html", palavras: ["Idioma", "idiomas"] },  
+    { titulo: "Técnico", url: "cursos.html#tecnicos", palavras: ["tecnico", "tec", "técnico"] },
+    { titulo: "Graduação", url: "cursos.html#graduacao", palavras: ["graduacao", "graduação", "grad"] },
+    { titulo: "Livre", url: "cursos.html#livres", palavras: ["livre", "livres"] },
+    { titulo: "Idiomas", url: "cursos.html#idiomas", palavras: ["idioma", "idiomas"] },  
 ];
 const formPesquisa = document.getElementById('formPesquisa');
     formPesquisa.addEventListener('submit', function (evento){
@@ -43,27 +43,61 @@ const formPesquisa = document.getElementById('formPesquisa');
             alert('Nenhum resultado encontrado para:' + termo);
             return;
         }
-        window.location.href = `${resultado.url}?busca=${encodeURIComponent(termo)}`;
+
+        const partes = resultado.url.split('#')
+        const pagina = partes[0];
+        const ancora = partes[1];
+        
+        let destino = `${pagina}?busca=${encodeURIComponent(termo)}`;
+        if (ancora) {
+            destino += `#${ancora}`;
+        }
+        window.location.href = destino;
     });
 
-const params = new URLSearchParams(window.location.search);
-const termoBusca = params.get('busca');
+    function normalizar(texto) {
+        return texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+    function mostrarCategoria(id) {
+        document.querySelectorAll('.painelCursos').forEach(function (painel){
+            painel.style.display = (painel.id === id) ? 'block' : 'none';
+        });
+
+        const alvo = document.getElementById(id);
+        if (alvo){
+            alvo.scrollIntoView({behavior: 'smooth'});
+        }
+    }
+
+    const hash = location.hash.slice(1);
+    if (hash) {
+        mostrarCategoria(hash);
+    }
+
+    window.addEventListener('hashchange', function (){
+        mostrarCategoria(location.hash.slice(1));
+    });
+    
+const termoBusca = new URLSearchParams(location.search).get('busca');
 
 if (termoBusca) {
     document.getElementById('pesquisa').value = termoBusca;
     
-    const termo = termoBusca.toLowerCase();
+    const termo = normalizar(termoBusca);
     let primeiroResultado = null;
     
     const elementos = document.querySelectorAll('h1, h2, h3, h4, p , li');
     elementos.forEach(function(el){
-        if (el.textContent.toLowerCase().includes(termo)){
+        if(el.offsetParent === null) return;
+
+        if(normalizar(el.textContent).includes(termo)){
             el.classList.add('destaque');
-            if(!primeiroResultado) primeiroResultado = el;
+            if 
+            (!primeiroResultado) primeiroResultado = el;
         }
     });
     
-    if (primeiroResultado){
+    if (primeiroResultado && !hash){
         primeiroResultado.scrollIntoView({behavior: 'smooth', block: 'center'});
     }      
 }
