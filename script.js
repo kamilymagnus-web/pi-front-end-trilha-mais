@@ -1,18 +1,18 @@
 const indice = [
-    { titulo: "Informática", url: "informatica.html", palavras: ["informática", "tecnico", "redes"] },
-    { titulo: "Redes", url: "redes.html", palavras: ["redes"] },
-    { titulo: "Administração", url: "administracao.html", palavras: ["administração"] },
-    { titulo: "Fármacia", url: "farmacia.html", palavras: ["farmacia", "farmácia"] },
+    { titulo: "Informática", url: "informatica.html", palavras: ["informática", "info", "informatica"] },
+    { titulo: "Redes", url: "redes.html", palavras: ["redes, rede"] },
+    { titulo: "Administração", url: "administracao.html", palavras: ["administração", "administracao", "adm", "admin"] },
+    { titulo: "Fármacia", url: "farmacia.html", palavras: ["farmacia", "farmácia", "farm"] },
     { titulo: "Turismo", url: "turismo.html", palavras: ["turismo"] },
     { titulo: "Audiovisual", url: "audiovisual.html", palavras: ["audiovisual"] },
-    { titulo: "Psicologia", url: "psicologia.html", palavras: ["psicologia"] },
+    { titulo: "Psicologia", url: "psicologia.html", palavras: ["psicologia", "psico", "psi"] },
     { titulo: "Mecatrônica", url: "mecatronica.html", palavras: ["mecatronica", "mecatrônica"] },
-    { titulo: "Medicina", url: "medicina.html", palavras: ["medicina"] },
+    { titulo: "Medicina", url: "medicina.html", palavras: ["medicina", "med"] },
     { titulo: "Direito", url: "direito.html", palavras: ["direito"] },
-    { titulo: "Engenharia de Software", url: "engenharia-de-software.html", palavras: ["engenharia", "software"] },
+    { titulo: "Engenharia de Software", url: "engenharia-de-software.html", palavras: ["engenharia", "software", "eng"] },
     { titulo: "Marketing", url: "marketing.html", palavras: ["marketing"] },
-    { titulo: "Aromaterapia", url: "aromaterapia.html", palavras: ["aromaterapia", "saúde", "bem-estar"] },
-    { titulo: "Dança", url: "danca.html", palavras: ["dança", "dança livre"] },
+    { titulo: "Aromaterapia", url: "aromaterapia.html", palavras: ["aromaterapia"] },
+    { titulo: "Dança", url: "danca.html", palavras: ["danca", "dança", "dança livre"] },
     { titulo: "Teatro", url: "teatro.html", palavras: ["teatro"] },
     { titulo: "Pintura em Tela", url: "pintura-em-tela.html", palavras: ["pintura"] },
     { titulo: "Cerâmica", url: "ceramica.html", palavras: ["ceramica", "cerâmica"] },
@@ -25,6 +25,10 @@ const indice = [
     { titulo: "Valiriano", url: "valiriano.html", palavras: ["valiriano"] },
     { titulo: "Perfil", url: "perfil.html", palavras: ["perfil", "conta"] },
     { titulo: "Home", url: "index.html", palavras: ["home", "inicio", "início"] },
+    { titulo: "Técnico", url: "cursos.html#tecnicos", palavras: ["tecnico", "tec", "técnico"] },
+    { titulo: "Graduação", url: "cursos.html#graduacao", palavras: ["graduacao", "graduação", "grad"] },
+    { titulo: "Livre", url: "cursos.html#livres", palavras: ["livre", "livres"] },
+    { titulo: "Idiomas", url: "cursos.html#idiomas", palavras: ["idioma", "idiomas"] },  
 ];
 const formPesquisa = document.getElementById('formPesquisa');
     formPesquisa.addEventListener('submit', function (evento){
@@ -39,27 +43,61 @@ const formPesquisa = document.getElementById('formPesquisa');
             alert('Nenhum resultado encontrado para:' + termo);
             return;
         }
-        window.location.href = `${resultado.url}?busca=${encodeURIComponent(termo)}`;
+
+        const partes = resultado.url.split('#')
+        const pagina = partes[0];
+        const ancora = partes[1];
+        
+        let destino = `${pagina}?busca=${encodeURIComponent(termo)}`;
+        if (ancora) {
+            destino += `#${ancora}`;
+        }
+        window.location.href = destino;
     });
 
-const params = new URLSearchParams(window.location.search);
-const termoBusca = params.get('busca');
+    function normalizar(texto) {
+        return texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+    function mostrarCategoria(id) {
+        document.querySelectorAll('.painelCursos').forEach(function (painel){
+            painel.style.display = (painel.id === id) ? 'block' : 'none';
+        });
+
+        const alvo = document.getElementById(id);
+        if (alvo){
+            alvo.scrollIntoView({behavior: 'smooth'});
+        }
+    }
+
+    const hash = location.hash.slice(1);
+    if (hash) {
+        mostrarCategoria(hash);
+    }
+
+    window.addEventListener('hashchange', function (){
+        mostrarCategoria(location.hash.slice(1));
+    });
+    
+const termoBusca = new URLSearchParams(location.search).get('busca');
 
 if (termoBusca) {
     document.getElementById('pesquisa').value = termoBusca;
     
-    const termo = termoBusca.toLowerCase();
+    const termo = normalizar(termoBusca);
     let primeiroResultado = null;
     
     const elementos = document.querySelectorAll('h1, h2, h3, h4, p , li');
     elementos.forEach(function(el){
-        if (el.textContent.toLowerCase().includes(termo)){
+        if(el.offsetParent === null) return;
+
+        if(normalizar(el.textContent).includes(termo)){
             el.classList.add('destaque');
-            if(!primeiroResultado) primeiroResultado = el;
+            if 
+            (!primeiroResultado) primeiroResultado = el;
         }
     });
     
-    if (primeiroResultado){
+    if (primeiroResultado && !hash){
         primeiroResultado.scrollIntoView({behavior: 'smooth', block: 'center'});
     }      
 }
