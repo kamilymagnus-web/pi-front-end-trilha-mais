@@ -9,7 +9,7 @@ const indice = [
     { titulo: "Mecatrônica", url: "mecatronica.html", palavras: ["mecatronica", "mecatrônica"] },
     { titulo: "Medicina", url: "medicina.html", palavras: ["medicina", "med"] },
     { titulo: "Direito", url: "direito.html", palavras: ["direito"] },
-    { titulo: "Engenharia de Software", url: "engenharia-de-software.html", palavras: ["engenharia", "software", "eng"] },
+    { titulo: "Engenharia de Software", url: "engenheirodesoftware.html", palavras: ["engenharia", "software", "eng"] },
     { titulo: "Marketing", url: "marketing.html", palavras: ["marketing"] },
     { titulo: "Aromaterapia", url: "aromaterapia.html", palavras: ["aromaterapia"] },
     { titulo: "Dança", url: "danca.html", palavras: ["danca", "dança", "dança livre"] },
@@ -30,55 +30,96 @@ const indice = [
     { titulo: "Livre", url: "cursos.html#livres", palavras: ["livre", "livres"] },
     { titulo: "Idiomas", url: "cursos.html#idiomas", palavras: ["idioma", "idiomas"] },  
 ];
-const formPesquisa = document.getElementById('formPesquisa');
-    formPesquisa.addEventListener('submit', function (evento){
-        evento.preventDefault();
-        const termo = document.getElementById('pesquisa').value.trim().toLowerCase();
 
-        const resultado = indice.find(function(pagina){
-            return pagina.titulo.toLowerCase().includes(termo) || pagina.palavras.some(function(palavra){return palavra.includes(termo);});
-        });
+function normalizar(texto) {
+    return texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
 
-        if (!resultado){
-            alert('Nenhum resultado encontrado para:' + termo);
-            return;
-        }
-
-        const partes = resultado.url.split('#')
-        const pagina = partes[0];
-        const ancora = partes[1];
-        
-        let destino = `${pagina}?busca=${encodeURIComponent(termo)}`;
-        if (ancora) {
-            destino += `#${ancora}`;
-        }
-        window.location.href = destino;
+function exibirPainel(id) {
+    document.querySelectorAll('.painelCursos').forEach(function (painel){
+        painel.style.display = (painel.id === id) ? 'block' : 'none';
     });
+}    
 
-    function normalizar(texto) {
-        return texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+function limparDestaques(){
+    document.querySelectorAll('.destaque').forEach(function(el){
+        el.classList.remove('destaque');
+    });
+}
+
+function executarBusca(termoBusca,ancora) {
+    limparDestaques();
+
+    if(termoBusca){
+        document.getElementById('pesquisa').value = termoBusca;
     }
-    function mostrarCategoria(id) {
-        document.querySelectorAll('.painelCursos').forEach(function (painel){
-            painel.style.display = (painel.id === id) ? 'block' : 'none';
+
+    const termo = termoBusca ? normalizar(termoBusca):'';
+    let primeiroResultado = null;
+
+    if (termo) {
+        document.querySelectorAll('h1, h2, h3, h4, p , li').forEach(function(el){
+            if(normalizar(el.textContent).icludes(termo)) {
+                el.classList.add('destaque');
+                if (!primeiroResultado) primeiroResultado = el;
+            }
         });
+    }
+    
+    if (ancora && document.getElementById(ancora)){
+        exibirPainel(ancora);
+        document.getElementById(ancora).scrollIntoView({behavior: 'smooth'});
+    } else if (primeiroResultado) {
+        const painel = primeiroResultado.closest('.painelCursos');
+        if (painel) exibirPainel (painel.id);
+        primeiroResultado.scrollIntoView({behavior: 'smooth', block: 'center'});
+    }
+}
 
-        const alvo = document.getElementById(id);
-        if (alvo){
-            alvo.scrollIntoView({behavior: 'smooth'});
-        }
+    function aplicarUrl(){
+        const busca = new URLSearchParams(location.search).get('busca');
+        const ancora = location.hash.slice(1);
+        if (busca || ancora) executarBusca (busca, ancora);
     }
 
-    const hash = location.hash.slice(1);
-    if (hash) {
-        mostrarCategoria(hash);
-    }
+    aplicarUrl();
+    window.addEventListener('popstate', aplicarUrl);
 
-    window.addEventListener('hashchange', function (){
-        mostrarCategoria(location.hash.slice(1));
+    const formPesquisa = document.getElementById('formPesquisa');
+
+    formPesquisa.addEventListener('submit', function (evento) {
+    evento.preventDefault();
+    const termo = document.getElementById('pesquisa').value.trim().toLowerCase();
+    
+    const resultado = indice.find(function (pagina) {
+        return pagina.titulo.toLowerCase().includes(termo) ||
+            pagina.palavras.some(function (palavra) {
+                return palavra.includes(termo);
+            });
     });
     
-const termoBusca = new URLSearchParams(location.search).get('busca');
+    if (!resultado) {
+        alert('Nenhum resultado encontrado para: ' + termo);
+        return;
+    }
+
+    const partes = resultado.url.split('#');
+    const pagina = partes[0];
+    const ancora = partes[1];
+    
+    let destino = `${pagina}?busca=${encodeURIComponent(termo)}`;
+    if (ancora) destino += `#${ancora}`;
+
+    const paginaAtual = location.pathname.split('/').pop() || 'index.html';
+
+    if (pagina === paginaAtual) {
+        history.pushState(null, '', destino)
+        executarBusca(termo, ancora);
+    } else {
+        window.location.href = destino;
+    }
+});    
+    
 
 if (termoBusca) {
     document.getElementById('pesquisa').value = termoBusca;
