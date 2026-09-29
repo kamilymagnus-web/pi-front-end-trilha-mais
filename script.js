@@ -121,28 +121,6 @@ function executarBusca(termoBusca,ancora) {
 });    
     
 
-if (termoBusca) {
-    document.getElementById('pesquisa').value = termoBusca;
-    
-    const termo = normalizar(termoBusca);
-    let primeiroResultado = null;
-    
-    const elementos = document.querySelectorAll('h1, h2, h3, h4, p , li');
-    elementos.forEach(function(el){
-        if(el.offsetParent === null) return;
-
-        if(normalizar(el.textContent).includes(termo)){
-            el.classList.add('destaque');
-            if 
-            (!primeiroResultado) primeiroResultado = el;
-        }
-    });
-    
-    if (primeiroResultado && !hash){
-        primeiroResultado.scrollIntoView({behavior: 'smooth', block: 'center'});
-    }      
-}
-
 const categoriaperfil = document.getElementById('categoriaPerfil');
 const paineisPerfil = document.querySelectorAll('.painelPerfil');
 const filtrarPerfil = document.getElementById('filtrarPerfil');
