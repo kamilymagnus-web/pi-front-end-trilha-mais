@@ -4,38 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trilha.com</title>
-    <link rel="stylesheet" href="styleMat.css">
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Trilha.com</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="cursos.html">Cursos</a>
-            <a href="perfil.html">Perfil</a>
-            <form id="formPesquisa">
-                <input type="text" id="pesquisa" placeholder="Procurar..">
-            </form>  
-        </nav>
+        <div class="navBar">
+            <nav id="navBar">
+                <a href="index.html">Home</a>
+                <a href="cursos.html">Cursos</a>
+                <a href="perfil.html">Meu Perfil</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#contato">Fale conosco</a>
+                <form id="formPesquisa">
+                    <input type="text" id="pesquisa" placeholder="Procurar..">
+                </form>  
+            </nav>
+        </div>
     </header>
-<main>
-    <h2>Formulário de Matrícula</h2>
+    <div class="banner">
+        <h1>Bem-vindo ao Trilha.com</h1>
+        <p>Explore nossos cursos e descubra novas oportunidades de aprendizado!</p>
+        <!--<img src="images//full-banner.jpg" alt="banner-site">-->
+    </div>
+    <main> 
+            <h1>Formulário de Matrícula</h1>
 
-    <form id="formMatricula">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" placeholder="Digite Seu Nome">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="Digite Seu Email">
-        <label for="telefone">Telefone:</label>
-        <input type="tel" id="telefone" name="telefone" placeholder="Digite Seu Telefone">
+        <form class="formMatricula" id="formMatricula">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite Seu Nome">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Digite Seu Email">
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="Digite Seu Telefone">
 
-    <button type="submit">Enviar Matrícula</button>
-    <p id="mensagemSucesso" style="display: none; color:rgb(9, 231, 9)">Matrícula enviada com sucesso!</p>
-    <p id="mensagemErro" style="display:none; color:rgb(255, 26, 26)">Preencha todos os campos antes de enviar.</p>
-    </form>
-
-    
-</main>
+            <button type="submit">Enviar Matrícula</button>
+            <p id="mensagemSucesso" style="display: none; color:rgb(9, 231, 9)">Matrícula enviada com sucesso!</p>
+            <p id="mensagemErro" style="display:none; color:rgb(255, 26, 26)">Preencha todos os campos antes de enviar.</p>
+        </form>
+    </main>
+    <footer id="contato">
+        <p>&copy; 2026 Trilha. Todos os direitos reservados.</p>
+        <p>Contato: contato@trilha.com</p>
+        <p>Telefone: (18) 1234-5678</p>
+        <p>Av. João Arruda Brasil, 500</p>
+        <p>São Joaquim, Araçatuba - SP, 16050-400</p>
+    </footer>
 </body>
 </html>

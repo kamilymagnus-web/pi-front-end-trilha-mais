@@ -6,315 +6,323 @@
         <script src="script.js" defer></script>
     </head>
     <body>
-        <header>
-            <h1>Trilha.com</h1>
-            <nav>
+    <header>
+        <div class="navBar">
+            <nav id="navBar">
                 <a href="index.html">Home</a>
-                <a href="cursos.html">Cursos</a>
-                <a href="perfil.html">Perfil</a>
+                <a href="perfil.html">Meu Perfil</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#contato">Fale conosco</a>
                 <form id="formPesquisa">
                     <input type="text" id="pesquisa" placeholder="Procurar..">
                 </form>  
             </nav>
-        </header>
-        <main>
-            <h2>Cursos</h2>
-            <p>Confira nossos cursos disponíveis:</p>
-            <select id="categoriaCursos" name="categoria">
-                <option value="default">Selecione a categoria</option>
-                <option value="tecnicos">Cursos Técnicos</option>
-                <option value="graduacao">Graduação</option>
-                <option value="livres">Cursos Livres</option>
-                <option value="idiomas">Idiomas</option> 
-            </select>
-            <button type="button" id="filtrarCursos">Filtrar</button>
+        </div>
+    </header>
+    <main>
+        <h2>Cursos</h2><br>
+        <p>Confira nossos cursos disponíveis:</p>
+        
+        <select id="categoriaCursos" name="categoria">
+            <option value="default">Selecione a categoria</option>
+            <option value="tecnicos">Cursos Técnicos</option>
+            <option value="graduacao">Graduação</option>
+            <option value="livres">Cursos Livres</option>
+            <option value="idiomas">Idiomas</option> 
+        </select>
+        <button type="button" id="filtrarCursos">Filtrar</button>
 
-            <div class="painelCursos" id="tecnicos">
-                <h3>Cursos Técnicos</h3>
-                <p>Lista de cursos técnicos disponíveis.</p>
-                <section class="tecnicos">
+        <div class="painelCursos" id="tecnicos">
+            <h3>Cursos Técnicos</h3>
+            <section class="tecnicos">
+            <div class="container">
+                <div class="card-curso">
+                    <a href="">
+                        <h3>Informática</h3>
+                        <img src="images//info.jpg" alt="curso-img">
+                        <h5>1200 Horas</h5>
+                        <h4>Tecnico | Presencial</h4>
+                        <a href="informatica.html">
+                            <button onclick="window.location.href='informatica.html'">Saiba mais</button>
+                    </a>
+                </div>
+                <div class="card-curso">
+                    <a href="">
+                        <h3>Redes</h3>
+                        <img src="images/redes.jpg" alt="curso-img">
+                        <h5>1200 Horas</h5>
+                        <h4>Nível: Básico</h4>
+                        <a href="redes.html">
+                            <button onclick="window.location.href='redes.html'">Saiba mais</button>
+                    </a>
+                </div>
+                <div class="card-curso">
+                    <a href="">
+                        <h3>Administração</h3>
+                        <img src="images/adm.jpg" alt="curso-img">
+                        <h5>carga horária</h5>
+                        <h4>Nível: Básico</h4>
+                        <a href="administracao.html">
+                            <button onclick="window.location.href='administracao.html'">Saiba mais</button>
+                    </a>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card-curso">
+                    <a href="">
+                        <h3>Fármacia</h3>
+                        <img src="images/farm.jpg" alt="curso-img">
+                        <h5>carga horária</h5>
+                        <h4>Nível: Básico</h4>
+                        <a href="farmacia.html">
+                            <button onclick="window.location.href='farmacia.html'">Saiba mais</button>
+                    </a>
+                </div>
+                <div class="card-curso">
+                    <a href="">
+                        <h3>Turismo</h3>
+                        <img src="images/turismo.jpg" alt="curso-img">
+                        <h5>carga horária</h5>
+                        <h4>Nível: Básico</h4>
+                        <a href="turismo.html">
+                            <button onclick="window.location.href='turismo.html'">Saiba mais</button>
+                    </a>
+                </div>
+                <div class="card-curso">
+                    <a href="">
+                        <h3>Audiovisual</h3>
+                        <img src="images/audiovisu.jpg" alt="curso-img">
+                        <h5>carga horária</h5>
+                        <h4>Nível: Básico</h4>
+                        <a href="audiovisual.html">
+                            <button onclick="window.location.href='audiovisual.html'">Saiba mais</button>
+                    </a>
+                </div>
+            </div>
+
+            </section>
+        </div>
+        <div class="painelCursos" id="graduacao">
+            <h3> Graduação</h3>
+            <section class="graduacao">
                 <div class="container">
                     <div class="card-curso">
                         <a href="">
-                            <h3>Informática</h3>
-                            <img src="images//info.jpg" alt="curso-img">
-                            <h5>1200 Horas</h5>
-                            <h4>Tecnico | Presencial</h4>
-                            <a href="informatica.html">
-                                <button onclick="window.location.href='informatica.html'">Saiba mais</button>
-                        </a>
-                    </div>
-                    <div class="card-curso">
-                        <a href="">
-                            <h3>Redes</h3>
-                            <img src="images/redes.jpg" alt="curso-img">
-                            <h5>1200 Horas</h5>
-                            <h4>Nível: Básico</h4>
-                            <a href="redes.html">
-                                <button onclick="window.location.href='redes.html'">Saiba mais</button>
-                        </a>
-                    </div>
-                    <div class="card-curso">
-                        <a href="">
-                            <h3>Administração</h3>
-                            <img src="images/adm.jpg" alt="curso-img">
+                            <h3>Psicologia</h3>
+                            <img src="images/psico.jpg" alt="curso-img">
                             <h5>carga horária</h5>
                             <h4>Nível: Básico</h4>
-                            <a href="administracao.html">
-                                <button onclick="window.location.href='administracao.html'">Saiba mais</button>
+                            <a href="psicologia.html">
+                            <button onclick="window.location.href='psicologia.html'">Saiba mais</button>
+                        </a>
+                    </div>
+                    <div class="card-curso">
+                        <a href="">
+                            <h3>Mecatrônica</h3>
+                            <img src="images/meca.jpg" alt="curso-img">
+                            <h5>carga horária</h5>
+                            <h4>Nível: Básico</h4>
+                            <a href="mecatronica.html">
+                            <button onclick="window.location.href='mecatronica.html'">Saiba mais</button>
+                        </a>
+                    </div>
+                    <div class="card-curso">
+                        <a href=""></a>
+                            <h3>Medicina</h3>
+                            <img src="images/enferm.jpg" alt="curso-img">
+                            <h5>carga horária</h5>
+                            <h4>Nível: Básico</h4>
+                            <a href="medicina.html">
+                            <button onclick="window.location.href='medicina.html'">Saiba mais</button>
                         </a>
                     </div>
                 </div>
                 <div class="container">
                     <div class="card-curso">
-                        <a href="">
-                            <h3>Fármacia</h3>
-                            <img src="images/farm.jpg" alt="curso-img">
+                        <a href=""></a>
+                            <h3>Direito</h3>
+                            <img src="images/direito.jpg" alt="curso-img">
                             <h5>carga horária</h5>
                             <h4>Nível: Básico</h4>
-                            <a href="farmacia.html">
-                                <button onclick="window.location.href='farmacia.html'">Saiba mais</button>
+                            <a href="direito.html">
+                            <button onclick="window.location.href='direito.html'">Saiba mais</button>
                         </a>
                     </div>
                     <div class="card-curso">
                         <a href="">
-                            <h3>Turismo</h3>
-                            <img src="images/turismo.jpg" alt="curso-img">
+                            <h3>Eng. de Software</h3>
+                            <img src="images/eng.jpg" alt="curso-img">
                             <h5>carga horária</h5>
                             <h4>Nível: Básico</h4>
-                            <a href="turismo.html">
-                                <button onclick="window.location.href='turismo.html'">Saiba mais</button>
+                            <a href="engenheirodesoftware.html">
+                            <button onclick="window.location.href='engenheirodesoftware.html'">Saiba mais</button>
                         </a>
                     </div>
                     <div class="card-curso">
                         <a href="">
-                            <h3>Audiovisual</h3>
-                            <img src="images/audiovisu.jpg" alt="curso-img">
+                            <h3>Marketing</h3>
+                            <img src="images/mark.jpg" alt="curso-img">
                             <h5>carga horária</h5>
                             <h4>Nível: Básico</h4>
-                            <a href="audiovisual.html">
-                                <button onclick="window.location.href='audiovisual.html'">Saiba mais</button>
+                            <a href="marketing.html">
+                            <button onclick="window.location.href='marketing.html'">Saiba mais</button>
                         </a>
                     </div>
                 </div>
-
-                </section>
-            </div>
-            <div class="painelCursos" id="graduacao">
-                <h3> Graduação</h3>
-                <p>Lista de cursos de graduação disponíveis.</p>
-                <section class="graduacao">
-                    <div class="container">
-                        <div class="card-curso">
-                            <a href="">
-                                <h3>Psicologia</h3>
-                                <img src="images/psico.jpg" alt="curso-img">
-                                <h5>carga horária</h5>
-                                <h4>Nível: Básico</h4>
-                                <a href="psicologia.html">
-                                <button onclick="window.location.href='psicologia.html'">Saiba mais</button>
-                            </a>
-                        </div>
-                        <div class="card-curso">
-                            <a href="">
-                                <h3>Mecatrônica</h3>
-                                <img src="images/meca.jpg" alt="curso-img">
-                                <h5>carga horária</h5>
-                                <h4>Nível: Básico</h4>
-                                <a href="mecatronica.html">
-                                <button onclick="window.location.href='mecatronica.html'">Saiba mais</button>
-                            </a>
-                        </div>
-                        <div class="card-curso">
-                            <a href=""></a>
-                                <h3>Medicina</h3>
-                                <img src="images/enferm.jpg" alt="curso-img">
-                                <h5>carga horária</h5>
-                                <h4>Nível: Básico</h4>
-                                <a href="medicina.html">
-                                <button onclick="window.location.href='medicina.html'">Saiba mais</button>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="card-curso">
-                            <a href=""></a>
-                                <h3>Direito</h3>
-                                <img src="images/direito.jpg" alt="curso-img">
-                                <h5>carga horária</h5>
-                                <h4>Nível: Básico</h4>
-                                <a href="direito.html">
-                                <button onclick="window.location.href='direito.html'">Saiba mais</button>
-                            </a>
-                        </div>
-                        <div class="card-curso">
-                            <a href="">
-                                <h3>Eng. de Software</h3>
-                                <img src="images/eng.jpg" alt="curso-img">
-                                <h5>carga horária</h5>
-                                <h4>Nível: Básico</h4>
-                                <a href="engenheirodesoftware.html">
-                                <button onclick="window.location.href='engenheirodesoftware.html'">Saiba mais</button>
-                            </a>
-                        </div>
-                        <div class="card-curso">
-                            <a href="">
-                                <h3>Marketing</h3>
-                                <img src="images/mark.jpg" alt="curso-img">
-                                <h5>carga horária</h5>
-                                <h4>Nível: Básico</h4>
-                                <a href="marketing.html">
-                                <button onclick="window.location.href='marketing.html'">Saiba mais</button>
-                            </a>
-                        </div>
-                    </div>
-                </section>
-            </div>
-            <div class="painelCursos" id="livres">
-                <h3>Cursos Livres</h3>
-                <p>Lista de cursos livres disponíveis.</p>
-                <section class="livres">
-                    <div class="container">
-                        <div class="card-curso">
+            </section>
+        </div>
+        <div class="painelCursos" id="livres">
+            <h3>Cursos Livres</h3>
+            <section class="livres">
+                <div class="container">
+                    <div class="card-curso">
+                        <a href="aromaterapia.html">
+                            <h3>Aromaterapia</h3>
+                            <img src="images/aroma.jpg" alt="curso-img">
+                            <h5>carga horária</h5>
+                            <h4>Nível: Básico</h4>
                             <a href="aromaterapia.html">
-                                <h3>Aromaterapia</h3>
-                                <img src="images/aroma.jpg" alt="curso-img">
-                                <h5>carga horária</h5>
-                                <h4>Nível: Básico</h4>
-                                <a href="aromaterapia.html">
-                                <button onclick="window.location.href='aromaterapia.html   '">Saiba mais</button>
-                            </a>
-                        </div>
-                        <div class="card-curso">
-                            <a href="">
-                                <h3>Dança</h3>
-                                <img src="images/danca.jpg" alt="curso-img">
-                                <h5>carga horária</h5>
-                                <h4>Nível: Básico</h4>
-                                <a href="danca.html">
-                                <button onclick="window.location.href='danca.html'">Saiba mais</button>
-                            </a>
-                        </div>
-                        <div class="card-curso">
-                            <a href="">
-                                <h3>Teatro</h3>
-                                <img src="images/teatro.jpg" alt="curso-img">
-                                <h5>carga horária</h5>
-                                <h4>Nível: Básico</h4>
-                                <a href="teatro.html">  
-                                <button onclick="window.location.href='teatro.html'">Saiba mais</button>  
-                            </a>
-                        </div>
+                            <button onclick="window.location.href='aromaterapia.html   '">Saiba mais</button>
+                        </a>
                     </div>
-                    <div class="container">
-                        <div class="card-curso">
-                            <a href="">
-                                <h3>Pintura em Tela</h3>
-                                <img src="images/tela.jpg" alt="curso-img">
-                                <h5>carga horária</h5>
-                                <h4>Nível: Básico</h4>
-                                <a href="pintura-em-tela.html">
-                                <button onclick="window.location.href='pintura-em-tela.html'">Saiba mais</button>
-                            </a>
-                        </div>
-                        <div class="card-curso">
-                            <a href="">
-                                <h3>Cerâmica</h3>
-                                <img src="images/cera.jpg" alt="curso-img">
-                                <h5>carga horária</h5>
-                                <h4>Nível: Básico</h4>
-                                <a href="ceramica.html">
-                                <button onclick="window.location.href='ceramica.html'">Saiba mais</button>
-                            </a>
-                        </div>
-                        <div class="card-curso">
-                            <a href="">
-                                <h3>Biscuit</h3>
-                                <img src="images/bis.jpg" alt="curso-img">
-                                <h5>carga horária</h5>
-                                <h4>Nível: Básico</h4>
-                                <a href="biscuit.html">
-                                <button onclick="window.location.href='biscuit.html'">Saiba mais</button>
-                            </a>
-                        </div>
+                    <div class="card-curso">
+                        <a href="">
+                            <h3>Dança</h3>
+                            <img src="images/danca.jpg" alt="curso-img">
+                            <h5>carga horária</h5>
+                            <h4>Nível: Básico</h4>
+                            <a href="danca.html">
+                            <button onclick="window.location.href='danca.html'">Saiba mais</button>
+                        </a>
                     </div>
-                </section>
-            </div>
+                    <div class="card-curso">
+                        <a href="">
+                            <h3>Teatro</h3>
+                            <img src="images/teatro.jpg" alt="curso-img">
+                            <h5>carga horária</h5>
+                            <h4>Nível: Básico</h4>
+                            <a href="teatro.html">  
+                            <button onclick="window.location.href='teatro.html'">Saiba mais</button>  
+                        </a>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="card-curso">
+                        <a href="">
+                            <h3>Pintura em Tela</h3>
+                            <img src="images/tela.jpg" alt="curso-img">
+                            <h5>carga horária</h5>
+                            <h4>Nível: Básico</h4>
+                            <a href="pintura-em-tela.html">
+                            <button onclick="window.location.href='pintura-em-tela.html'">Saiba mais</button>
+                        </a>
+                    </div>
+                    <div class="card-curso">
+                        <a href="">
+                            <h3>Cerâmica</h3>
+                            <img src="images/cera.jpg" alt="curso-img">
+                            <h5>carga horária</h5>
+                            <h4>Nível: Básico</h4>
+                            <a href="ceramica.html">
+                            <button onclick="window.location.href='ceramica.html'">Saiba mais</button>
+                        </a>
+                    </div>
+                    <div class="card-curso">
+                        <a href="">
+                            <h3>Biscuit</h3>
+                            <img src="images/bis.jpg" alt="curso-img">
+                            <h5>carga horária</h5>
+                            <h4>Nível: Básico</h4>
+                            <a href="biscuit.html">
+                            <button onclick="window.location.href='biscuit.html'">Saiba mais</button>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
 
-            <div class="painelCursos" id="idiomas">
-                <h3>Idiomas</h3>
-                <p>Lista de Cursos de Idiomas disponíveis</p>
-                <section class="idiomas">
-                    <div class="container">
-                        <div class="card-curso">
-                            <a href="">
-                                <h3>Inglês</h3>
-                                <img src="images/ingles.jpg" alt="curso-img">
-                                <h5>carga horária</h5>
-                                <h4>Nível: Básico</h4>
-                                <a href="ingles.html">
-                                <button onclick="window.location.href='ingles.html'">Saiba mais</button>
-                            </a>
-                        </div>
-                        <div class="card-curso">
-                            <a href="">
-                                <h3>Espanhol</h3>
-                                <img src="images/esp.jpg" alt="curso-img">
-                                <h5>carga horária</h5>
-                                <h4>Nível: Básico</h4>
-                                <a href="espanhol.html">
-                                <button onclick="window.location.href='espanhol.html'">Saiba mais</button>
-                            </a>
-                        </div>
-                        <div class="card-curso">
-                            <a href="">
-                                <h3>Francês</h3>
-                                <img src="images/frances.jpg" alt="curso-img">
-                                <h5>carga horária</h5>
-                                <h4>Nível: Básico</h4>
-                                <a href="frances.html"> 
-                                <button onclick="window.location.href='frances.html'">Saiba mais</button>
-                            </a>
-                        </div>
+        <div class="painelCursos" id="idiomas">
+            <h3>Idiomas</h3>
+            <section class="idiomas">
+                <div class="container">
+                    <div class="card-curso">
+                        <a href="">
+                            <h3>Inglês</h3>
+                            <img src="images/ingles.jpg" alt="curso-img">
+                            <h5>carga horária</h5>
+                            <h4>Nível: Básico</h4>
+                            <a href="ingles.html">
+                            <button onclick="window.location.href='ingles.html'">Saiba mais</button>
+                        </a>
                     </div>
-                    <div class="container">
-                        <div class="card-curso">
-                            <a href="">
-                                <h3>Italiano</h3>
-                                <img src="images/ita.jpg" alt="curso-img">
-                                <h5>carga horária</h5>
-                                <h4>Nível: Básico</h4>
-                                <a href="italiano.html">
-                                <button onclick="window.location.href='italiano.html'">Saiba mais</button>
-                            </a>
-                        </div>
-                        <div class="card-curso">
-                            <a href="">
-                                <h3>Japonês</h3>
-                                <img src="images/japa.jpg" alt="curso-img">
-                                <h5>carga horária</h5>
-                                <h4>Nível: Básico</h4>
-                                <a href="japones.html">
-                                <button onclick="window.location.href='japones.html'">Saiba mais</button>
-                            </a>
-                        </div>
-                        <div class="card-curso">
-                            <a href="">
-                                <h3>Valiriano</h3>
-                                <img src="images/vali.jpg" alt="curso-img">
-                                <h5>carga horária</h5>
-                                <h4>Nível: Básico</h4>
-                                    <a href="valiriano.html">  
-                                <button onclick="window.location.href='valiriano.html'">Saiba mais</button>
-                            </a>
-                        </div>
+                    <div class="card-curso">
+                        <a href="">
+                            <h3>Espanhol</h3>
+                            <img src="images/esp.jpg" alt="curso-img">
+                            <h5>carga horária</h5>
+                            <h4>Nível: Básico</h4>
+                            <a href="espanhol.html">
+                            <button onclick="window.location.href='espanhol.html'">Saiba mais</button>
+                        </a>
                     </div>
-                </section>
-            </div>        
-        </main>
-        <footer id="contato">
-        <p>&copy; 2024 NOME FANTASIA. Todos os direitos reservados.</p>
-        <p>Contato: contato@Trilha.com</p>
+                    <div class="card-curso">
+                        <a href="">
+                            <h3>Francês</h3>
+                            <img src="images/frances.jpg" alt="curso-img">
+                            <h5>carga horária</h5>
+                            <h4>Nível: Básico</h4>
+                            <a href="frances.html"> 
+                            <button onclick="window.location.href='frances.html'">Saiba mais</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="card-curso">
+                        <a href="">
+                            <h3>Italiano</h3>
+                            <img src="images/ita.jpg" alt="curso-img">
+                            <h5>carga horária</h5>
+                            <h4>Nível: Básico</h4>
+                            <a href="italiano.html">
+                            <button onclick="window.location.href='italiano.html'">Saiba mais</button>
+                        </a>
+                    </div>
+                    <div class="card-curso">
+                        <a href="">
+                            <h3>Japonês</h3>
+                            <img src="images/japa.jpg" alt="curso-img">
+                            <h5>carga horária</h5>
+                            <h4>Nível: Básico</h4>
+                            <a href="japones.html">
+                            <button onclick="window.location.href='japones.html'">Saiba mais</button>
+                        </a>
+                    </div>
+                    <div class="card-curso">
+                        <a href="">
+                            <h3>Valiriano</h3>
+                            <img src="images/valiriano.webp" alt="curso-img">
+                            <h5>carga horária</h5>
+                            <h4>Nível: Básico</h4>
+                                <a href="valiriano.html">  
+                            <button onclick="window.location.href='valiriano.html'">Saiba mais</button>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>        
+    </main>
+
+    <section id="sobre">
+        <h1>Sobre</h1>
+        <p>Os sites de cursos online revolucionaram a educação digital ao democratizar o acesso ao conhecimento e permitir o aprendizado flexível em qualquer lugar. Seja para quem deseja criar e hospedar a sua própria página educacional ou para quem busca plataformas para estudar de graça ou investir na carreira, o ecossistema digital oferece opções consolidadas.</p>
+        
+        <div class="voltar">
+            <a href="#navBar"><button>Home</button></a>
+        </div>
+    </section>
+    <footer id="contato">
+        <p>&copy; 2026 Trilha. Todos os direitos reservados.</p>
+        <p>Contato: contato@trilha.com</p>
         <p>Telefone: (18) 1234-5678</p>
         <p>Av. João Arruda Brasil, 500</p>
         <p>São Joaquim, Araçatuba - SP, 16050-400</p>
