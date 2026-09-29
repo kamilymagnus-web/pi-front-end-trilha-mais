@@ -28,115 +28,126 @@
     { titulo: "Técnico", url: "cursos.html#tecnicos", palavras: ["tecnico", "tec", "técnico"] },
     { titulo: "Graduação", url: "cursos.html#graduacao", palavras: ["graduacao", "graduação", "grad"] },
     { titulo: "Livre", url: "cursos.html#livres", palavras: ["livre", "livres"] },
-    { titulo: "Idiomas", url: "cursos.html#idiomas", palavras: ["idioma", "idiomas"] }
-    ];
-    
-    /* ===== PESQUISA ===== */
-    
-    function normalizar(texto) {
+    { titulo: "Idiomas", url: "cursos.html#idiomas", palavras: ["idioma", "idiomas"] },  
+];
+
+function normalizar(texto) {
     return texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-    }
-    
-    function exibirPainel(id) {
-    document.querySelectorAll('.painelCursos').forEach(function (painel) {
-        painel.classList.toggle('selecionado', painel.id === id);
+}
+
+function exibirPainel(id) {
+    document.querySelectorAll('.painelCursos').forEach(function (painel){
+        painel.style.display = (painel.id === id) ? 'block' : 'none';
     });
-    }
-    
-    function limparDestaques() {
-    document.querySelectorAll('.destaque').forEach(function (el) {
+}    
+
+function limparDestaques(){
+    document.querySelectorAll('.destaque').forEach(function(el){
         el.classList.remove('destaque');
     });
-    }
-    
-    function executarBusca(termoBusca, ancora) {
+}
+
+function executarBusca(termoBusca,ancora) {
     limparDestaques();
-    
-    const campo = document.getElementById('pesquisa');
-    if (termoBusca && campo) {
-        campo.value = termoBusca;
+
+    if(termoBusca){
+        document.getElementById('pesquisa').value = termoBusca;
     }
-    
-    const termo = termoBusca ? normalizar(termoBusca) : '';
+
+    const termo = termoBusca ? normalizar(termoBusca):'';
     let primeiroResultado = null;
-    
+
     if (termo) {
-        document.querySelectorAll('h1, h2, h3, h4, p, li').forEach(function (el) {
-        if (normalizar(el.textContent).includes(termo)) {
-            el.classList.add('destaque');
-            if (!primeiroResultado) primeiroResultado = el;
-        }
+        document.querySelectorAll('h1, h2, h3, h4, p , li').forEach(function(el){
+            if(normalizar(el.textContent).includes(termo)) {
+                el.classList.add('destaque');
+                if (!primeiroResultado) primeiroResultado = el;
+            }
         });
     }
     
-    if (ancora && document.getElementById(ancora)) {
+    if (ancora && document.getElementById(ancora)){
         exibirPainel(ancora);
-        document.getElementById(ancora).scrollIntoView({ behavior: 'smooth' });
+        document.getElementById(ancora).scrollIntoView({behavior: 'smooth'});
     } else if (primeiroResultado) {
         const painel = primeiroResultado.closest('.painelCursos');
-        if (painel) exibirPainel(painel.id);
-        primeiroResultado.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (painel) exibirPainel (painel.id);
+        primeiroResultado.scrollIntoView({behavior: 'smooth', block: 'center'});
     }
+}
+
+    function aplicarUrl(){
+        const busca = new URLSearchParams(location.search).get('busca');
+        const ancora = location.hash.slice(1);
+        if (busca || ancora) executarBusca (busca, ancora);
     }
-    
-    function aplicarUrl() {
-    const busca = new URLSearchParams(location.search).get('busca');
-    const ancora = location.hash.slice(1);
-    if (busca || ancora) executarBusca(busca, ancora);
-    }
-    
+
     aplicarUrl();
     window.addEventListener('popstate', aplicarUrl);
-    
-    const campoPesquisa = document.getElementById('pesquisa');
-    const formPesquisa = campoPesquisa ? campoPesquisa.closest('form') : null;
-    
-    if (formPesquisa) {
+
+    const formPesquisa = document.getElementById('formPesquisa');
+
     formPesquisa.addEventListener('submit', function (evento) {
-        evento.preventDefault();
-        const termo = campoPesquisa.value.trim().toLowerCase();
+    evento.preventDefault();
+    const termo = document.getElementById('pesquisa').value.trim().toLowerCase();
     
-        const resultado = indice.find(function (pagina) {
+    const resultado = indice.find(function (pagina) {
         return pagina.titulo.toLowerCase().includes(termo) ||
-                pagina.palavras.some(function (palavra) {
+            pagina.palavras.some(function (palavra) {
                 return palavra.includes(termo);
-                });
-        });
+            });
+    });
     
-        if (!resultado) {
+    if (!resultado) {
         alert('Nenhum resultado encontrado para: ' + termo);
         return;
-        }
+    }
+
+    const partes = resultado.url.split('#');
+    const pagina = partes[0];
+    const ancora = partes[1];
     
-        const partes = resultado.url.split('#');
-        const pagina = partes[0];
-        const ancora = partes[1];
-    
-        let destino = `${pagina}?busca=${encodeURIComponent(termo)}`;
-        if (ancora) destino += `#${ancora}`;
-    
-        const paginaAtual = location.pathname.split('/').pop() || 'index.html';
-    
-        if (pagina === paginaAtual) {
-        try {
-            history.pushState(null, '', destino);
-        } catch (e) {
-            // se o pushState falhar, a busca segue sem atualizar a URL
-        }
+    let destino = `${pagina}?busca=${encodeURIComponent(termo)}`;
+    if (ancora) destino += `#${ancora}`;
+
+    const paginaAtual = location.pathname.split('/').pop() || 'index.html';
+
+    if (pagina === paginaAtual) {
+        history.pushState(null, '', destino)
         executarBusca(termo, ancora);
-        } else {
+    } else {
         window.location.href = destino;
+    }
+});    
+    
+
+if (termoBusca) {
+    document.getElementById('pesquisa').value = termoBusca;
+    
+    const termo = normalizar(termoBusca);
+    let primeiroResultado = null;
+    
+    const elementos = document.querySelectorAll('h1, h2, h3, h4, p , li');
+    elementos.forEach(function(el){
+        if(el.offsetParent === null) return;
+
+        if(normalizar(el.textContent).includes(termo)){
+            el.classList.add('destaque');
+            if 
+            (!primeiroResultado) primeiroResultado = el;
         }
     });
-    }
     
-    /* ===== PERFIL ===== */
-    
-    const categoriaperfil = document.getElementById('categoriaPerfil');
-    const paineisPerfil = document.querySelectorAll('.painelPerfil');
-    const filtrarPerfil = document.getElementById('filtrarPerfil');
-    
-    if (filtrarPerfil) {
+    if (primeiroResultado && !hash){
+        primeiroResultado.scrollIntoView({behavior: 'smooth', block: 'center'});
+    }      
+}
+
+const categoriaperfil = document.getElementById('categoriaPerfil');
+const paineisPerfil = document.querySelectorAll('.painelPerfil');
+const filtrarPerfil = document.getElementById('filtrarPerfil');
+
+if (filtrarPerfil) {
     filtrarPerfil.addEventListener('click', () => {
         const categoriaSelecionada = categoriaperfil.value;
     
