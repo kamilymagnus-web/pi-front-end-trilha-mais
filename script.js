@@ -1,6 +1,6 @@
-const indice = [
+    const indice = [
     { titulo: "Informática", url: "informatica.html", palavras: ["informática", "info", "informatica"] },
-    { titulo: "Redes", url: "redes.html", palavras: ["redes, rede"] },
+    { titulo: "Redes", url: "redes.html", palavras: ["redes", "rede"] },
     { titulo: "Administração", url: "administracao.html", palavras: ["administração", "administracao", "adm", "admin"] },
     { titulo: "Fármacia", url: "farmacia.html", palavras: ["farmacia", "farmácia", "farm"] },
     { titulo: "Turismo", url: "turismo.html", palavras: ["turismo"] },
@@ -59,7 +59,7 @@ function executarBusca(termoBusca,ancora) {
 
     if (termo) {
         document.querySelectorAll('h1, h2, h3, h4, p , li').forEach(function(el){
-            if(normalizar(el.textContent).icludes(termo)) {
+            if(normalizar(el.textContent).includes(termo)) {
                 el.classList.add('destaque');
                 if (!primeiroResultado) primeiroResultado = el;
             }
@@ -121,28 +121,6 @@ function executarBusca(termoBusca,ancora) {
 });    
     
 
-if (termoBusca) {
-    document.getElementById('pesquisa').value = termoBusca;
-    
-    const termo = normalizar(termoBusca);
-    let primeiroResultado = null;
-    
-    const elementos = document.querySelectorAll('h1, h2, h3, h4, p , li');
-    elementos.forEach(function(el){
-        if(el.offsetParent === null) return;
-
-        if(normalizar(el.textContent).includes(termo)){
-            el.classList.add('destaque');
-            if 
-            (!primeiroResultado) primeiroResultado = el;
-        }
-    });
-    
-    if (primeiroResultado && !hash){
-        primeiroResultado.scrollIntoView({behavior: 'smooth', block: 'center'});
-    }      
-}
-
 const categoriaperfil = document.getElementById('categoriaPerfil');
 const paineisPerfil = document.querySelectorAll('.painelPerfil');
 const filtrarPerfil = document.getElementById('filtrarPerfil');
@@ -150,138 +128,143 @@ const filtrarPerfil = document.getElementById('filtrarPerfil');
 if (filtrarPerfil) {
     filtrarPerfil.addEventListener('click', () => {
         const categoriaSelecionada = categoriaperfil.value;
-
+    
         paineisPerfil.forEach(painel => {
-            painel.style.display = "none";  
+        painel.style.display = "none";
         });
-
+    
         if (categoriaSelecionada === "default") {
-            return;
+        return;
         }
-
+    
         const painelSelecionado = document.getElementById(categoriaSelecionada);
         if (painelSelecionado) {
-            painelSelecionado.style.display = "block"; 
+        painelSelecionado.style.display = "block";
         }
     });
-} 
-
-
-const categoriaDocumentos = document.getElementById('categoria-documentos');
-const paineisDocumentos = document.querySelectorAll('.painel-documentos');
-const filtrarDocumentos = document.getElementById('filtrar-documentos');
-
-if (filtrarDocumentos) {
+    }
+    
+    /* ===== DOCUMENTOS ===== */
+    
+    const categoriaDocumentos = document.getElementById('categoria-documentos');
+    const paineisDocumentos = document.querySelectorAll('.painel-documentos');
+    const filtrarDocumentos = document.getElementById('filtrar-documentos');
+    
+    if (filtrarDocumentos) {
     filtrarDocumentos.addEventListener('click', () => {
         const categoriaSelecionada = categoriaDocumentos.value;
-
+    
         paineisDocumentos.forEach(painel => {
-            painel.classList.remove ('selecionado');  
+        painel.classList.remove('selecionado');
         });
-
+    
         if (categoriaSelecionada === "default") {
-            return;
+        return;
         }
-
+    
         const painelSelecionado = document.getElementById(categoriaSelecionada);
         if (painelSelecionado) {
-            painelSelecionado.classList.add('selecionado');
-            
-            painelSelecionado.scrollIntoView ({behavior: 'smooth', block: 'center'}); 
+        painelSelecionado.classList.add('selecionado');
+        painelSelecionado.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     });
-}    
-
-const categoriaCursos = document.getElementById('categoriaCursos');
-const paineisCursos = document.querySelectorAll('.painelCursos');
-const filtrarCursos = document.getElementById('filtrarCursos');
-if (filtrarCursos) {
+    }
+    
+    /* ===== FILTRO DE CURSOS ===== */
+    
+    const categoriaCursos = document.getElementById('categoriaCursos');
+    const paineisCursos = document.querySelectorAll('.painelCursos');
+    const filtrarCursos = document.getElementById('filtrarCursos');
+    
+    if (filtrarCursos) {
     filtrarCursos.addEventListener('click', () => {
         const categoriaSelecionada = categoriaCursos.value;
-
+    
         paineisCursos.forEach(painel => {
-            painel.classList.remove ('selecionado');  
+        painel.classList.remove('selecionado');
         });
-
+    
         if (categoriaSelecionada === "default") {
-            return;
+        return;
         }
-
-
+    
         const painelSelecionado = document.getElementById(categoriaSelecionada);
         if (painelSelecionado) {
-            painelSelecionado.classList.add('selecionado');
-            
-            painelSelecionado.scrollIntoView ({behavior: 'smooth', block: 'center'});
+        painelSelecionado.classList.add('selecionado');
+        painelSelecionado.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     });
-}
-
-const formMatricula = document.getElementById('formMatricula');
-const mensagemSucesso = document.getElementById('mensagemSucesso');
-const mensagemErro = document.getElementById('mensagemErro');
-
-if (formMatricula) {
-    formMatricula.addEventListener('submit', function(event) {
+    }
+    
+    /* ===== MATRÍCULA ===== */
+    
+    const formMatricula = document.getElementById('formMatricula');
+    const mensagemSucesso = document.getElementById('mensagemSucesso');
+    const mensagemErro = document.getElementById('mensagemErro');
+    
+    if (formMatricula) {
+    formMatricula.addEventListener('submit', function (event) {
         event.preventDefault();
-
+    
         const nome = document.getElementById('nome').value.trim();
         const email = document.getElementById('email').value.trim();
-        const telefone = document.getElementById ('telefone').value.trim();
-
-        const formularioValido = nome !== '' && email !== '' && telefone;
-
+        const telefone = document.getElementById('telefone').value.trim();
+    
+        const formularioValido = nome !== '' && email !== '' && telefone !== '';
+    
         if (formularioValido) {
-            mensagemSucesso.style.display = 'block';
-            mensagemErro.style.display ='none';
+        mensagemSucesso.style.display = 'block';
+        mensagemErro.style.display = 'none';
         } else {
-            mensagemErro.style.display = 'block';
-            mensagemSucesso.style.display = 'none';
+        mensagemErro.style.display = 'block';
+        mensagemSucesso.style.display = 'none';
         }
     });
-}
-
-function chaveProgresso(cursoId) {
+    }
+    
+    /* ===== PROGRESSO DOS CURSOS ===== */
+    
+    function chaveProgresso(cursoId) {
     return `progresso-${cursoId}`;
-}
-
-function carregarProgresso(cursoId) {
+    }
+    
+    function carregarProgresso(cursoId) {
     const dados = localStorage.getItem(chaveProgresso(cursoId));
     return dados ? JSON.parse(dados) : { modulos: {}, cancelado: false };
-}
-
-function salvarProgresso(cursoId, progresso) {
+    }
+    
+    function salvarProgresso(cursoId, progresso) {
     localStorage.setItem(chaveProgresso(cursoId), JSON.stringify(progresso));
-}
-
-function calcularPorcentagem(progresso, totalModulos) {
+    }
+    
+    function calcularPorcentagem(progresso, totalModulos) {
     const concluidas = Object.values(progresso.modulos).filter(Boolean).length;
     return totalModulos > 0 ? Math.round((concluidas / totalModulos) * 100) : 0;
-}
-
-function atualizarBarra(card, porcentagem) {
+    }
+    
+    function atualizarBarra(card, porcentagem) {
     card.querySelector('.barra-preenchida').style.width = porcentagem + '%';
     card.querySelector('.progresso-texto').textContent = porcentagem + '% concluído';
-}
-
-function inicializarCard(card) {
+    }
+    
+    function inicializarCard(card) {
     const cursoId = card.dataset.curso;
     const progresso = carregarProgresso(cursoId);
     const checkboxes = card.querySelectorAll('.lista-modulos input[type="checkbox"]');
-
+    
     if (progresso.cancelado) {
         card.style.display = 'none';
         return;
     }
-
-    checkboxes.forEach(function(checkbox) {
+    
+    checkboxes.forEach(function (checkbox) {
         checkbox.checked = !!progresso.modulos[checkbox.dataset.modulo];
     });
     
     atualizarBarra(card, calcularPorcentagem(progresso, checkboxes.length));
     
-    checkboxes.forEach(function(checkbox) {
-        checkbox.addEventListener('change', function() {
+    checkboxes.forEach(function (checkbox) {
+        checkbox.addEventListener('change', function () {
         const atual = carregarProgresso(cursoId);
         atual.modulos[checkbox.dataset.modulo] = checkbox.checked;
         salvarProgresso(cursoId, atual);
@@ -291,12 +274,12 @@ function inicializarCard(card) {
     
     const botaoCancelar = card.querySelector('.btn-cancelar');
     if (botaoCancelar) {
-        botaoCancelar.addEventListener('click', function() {
+        botaoCancelar.addEventListener('click', function () {
         const confirmar = confirm(
             'Tem certeza que deseja cancelar a matrícula?\n' +
             'Seu progresso será mantido salvo — se você se matricular novamente, poderá continuar de onde parou.'
         );
-
+    
         if (confirmar) {
             const atual = carregarProgresso(cursoId);
             atual.cancelado = true;
@@ -305,6 +288,7 @@ function inicializarCard(card) {
         }
         });
     }
-}
-const cardsAndamento = document.querySelectorAll('#andamento .card-andamento');
+    }
+    
+    const cardsAndamento = document.querySelectorAll('#andamento .card-andamento');
     cardsAndamento.forEach(inicializarCard);
