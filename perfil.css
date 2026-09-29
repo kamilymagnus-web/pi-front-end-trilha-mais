@@ -4,6 +4,23 @@ body{
     padding: 0;
 }
 
+h1{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+h2{
+    display: flex;
+    justify-content: center;
+}
+
+h4{
+    color: black;
+}
+
 header {
     background-color: #9d0505;
     color: #fff;
@@ -17,21 +34,24 @@ nav {
     padding: 0 20px;
 }
 
-nav a {
+
+a {
     color: #fff;
     text-decoration: none;
     margin: 0 15px;
     padding: 5px 10px;
 }
 
-#formPesquisa {
-    margin-left: auto;
+nav a:hover {
+    background-color: #7a0404;
+    border-radius: 50px;
 }
 
-#pesquisa {
-    padding: 8px;
-    border-radius: 20px;
+nav input[type="text"] {
+    padding: 5px 20px 5px 20px;
+    border-radius: 10px;
     border: none;
+    text-align: center;
 }
 
 .banner {
@@ -74,6 +94,7 @@ nav a {
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
+
 
 .Meus-Cursos {
     display: flex;
