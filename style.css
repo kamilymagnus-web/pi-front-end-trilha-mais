@@ -12,6 +12,14 @@ h1{
     align-items: center;
     margin-top: 20px;
 }
+h2{
+    display: flex;
+    justify-content: center;
+}
+
+h4{
+    color: black;
+}
 
 header {
     background-color: #9d0505;
@@ -40,7 +48,7 @@ nav a:hover {
 }
 
 nav input[type="text"] {
-    padding: 5px;
+    padding: 5px 20px 5px 20px;
     border-radius: 5px;
     border: none;
     text-align: center;
@@ -102,57 +110,6 @@ nav input[type="text"] {
     padding: 30px;
     margin-top: 20px;
 }
-
-/*
-.container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 10px;
-}
-
-.card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid black;
-    border-radius: 20px;
-    margin: 10px;
-    padding: 50px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.card img {
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-}
-
-.card button {
-    display: flex;
-    justify-content: center;
-    align-items: row;
-    text-align: center;
-    background-color: #9d0505;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.card h2{
-    font-size: 1.5rem;
-    color: #333333;
-    margin-bottom: 10px;
-}
-
-.card p{
-    font-size: 1rem;
-    color: #666666;
-    text-align: center;
-}*/
-
 
 .botaoCursos{
     display: flex;
@@ -235,11 +192,16 @@ footer {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-p {
+.card p {
     font-family: "Times New Roman", Times, serif;
     font-size: 1.2rem;
     margin: 20px 0;
-    line-height: 1.6;
+    text-align: center;
+}
+
+p{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.5rem;
     text-align: center;
 }
 
@@ -280,14 +242,46 @@ hr {
     box-shadow: 0 0 0 5px rgba(13, 237, 46, 0.25);
 }
 
-/*.painelCursos section div {
-    background-color:#dfdddf97;
-    padding: 12px;
-    border-radius: 20px;
-    font-size: 20px;
-    color:#b83434;
-}*/
+.formMatricula{
+    width: 550px;
+    margin: 100px auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+    background-color: #9d0505eb;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+}
 
+
+
+.formMatricula label{
+    color: #fff;
+}
+
+.formMatricula 
+input,
+select {
+    color: #666;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.formMatricula button {
+    padding: 10px;
+    background-color: #9d0505;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.formMatricula button:hover {
+    background-color: #7a0404;
+}
 
 .card-curso{
     background-color:#dfdddf97;
