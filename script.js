@@ -25,7 +25,7 @@
     { titulo: "Valiriano", url: "valiriano.html", palavras: ["valiriano"] },
     { titulo: "Perfil", url: "perfil.html", palavras: ["perfil", "conta"] },
     { titulo: "Home", url: "index.html", palavras: ["home", "inicio", "início"] },
-    { titulo: "Técnico", url: "cursos.html#tecnicos", palavras: ["tecnico", "tec", "técnico"] },
+    { titulo: "Técnico", url: "cursos.html#tecnicos", palavras: ["tecnico", "tec", "técnico", "tecnicos"] },
     { titulo: "Graduação", url: "cursos.html#graduacao", palavras: ["graduacao", "graduação", "grad"] },
     { titulo: "Livre", url: "cursos.html#livres", palavras: ["livre", "livres"] },
     { titulo: "Idiomas", url: "cursos.html#idiomas", palavras: ["idioma", "idiomas"] },  
