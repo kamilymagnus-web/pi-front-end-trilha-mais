@@ -201,12 +201,6 @@ if (filtrarPerfil) {
     const formMatricula = document.getElementById('formMatricula');
     const mensagemSucesso = document.getElementById('mensagemSucesso');
     const mensagemErro = document.getElementById('mensagemErro');
-
-    if(campoTelefone) {
-        campoTelefone.addEventListener('input', function(){
-            campoTelefone.value = campoTelefone.value.replace(/\D/g, '');
-        });
-    }
     
     if (formMatricula) {
     formMatricula.addEventListener('submit', function (event) {
